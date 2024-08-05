@@ -32,3 +32,99 @@ void draw() {
 ```
 En este ejemplo, setup() se utiliza para configurar la ventana de visualización, el color de fondo, el modo de color y la velocidad de fotogramas. Luego, draw() contiene el código que se ejecuta repetidamente para dibujar en la pantalla.
 
+
+
+* Conceptos Básicos.
+
+1.	Dibujar Formas Simples:
+	•	Explicar la función size() para definir el tamaño de la ventana.
+	•	Introducir las funciones line(), rect(), ellipse() y point() para dibujar líneas, rectángulos, elipses y puntos.
+
+```
+void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  background(255); // Fondo blanco
+  line(50, 50, 350, 350);
+  rect(100, 100, 200, 200);
+  ellipse(200, 200, 100, 100);
+  point(200, 200);
+}
+```
+
+
+2.	Colores:
+	•	Introducir background(), fill(), stroke() y noFill(), noStroke() para cambiar colores de fondo, relleno y contorno.
+
+```
+void setup() {
+  size(400, 400);
+  background(255);
+}
+
+void draw() {
+  fill(255, 0, 0); // Color rojo
+  rect(100, 100, 200, 200);
+
+  noFill(); // Sin relleno
+  stroke(0, 0, 255); // Contorno azul
+  ellipse(200, 200, 100, 100);
+}
+```
+
+Interactividad.
+
+1.	Uso del Ratón:
+	•	Introducir variables predefinidas como mouseX, mouseY.
+	•	Crear una simple interacción donde una forma sigue al ratón.
+
+```
+void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  background(255);
+  ellipse(mouseX, mouseY, 50, 50);
+}
+```
+
+2.	Eventos del Ratón:
+	•	Explicar mousePressed(), mouseReleased(), mouseDragged(), mouseMoved().
+	•	Ejemplo de cómo cambiar el color de una forma cuando se presiona el ratón.
+
+```
+boolean isPressed = false;
+
+void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  background(255);
+  if (isPressed) {
+    fill(0, 255, 0); // Verde
+  } else {
+    fill(255, 0, 0); // Rojo
+  }
+  ellipse(mouseX, mouseY, 50, 50);
+}
+
+void mousePressed() {
+  isPressed = true;
+}
+
+void mouseReleased() {
+  isPressed = false;
+}
+```
+
+
+
+
+
+
+
+
