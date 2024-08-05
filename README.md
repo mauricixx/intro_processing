@@ -32,6 +32,39 @@ void draw() {
 ```
 En este ejemplo, setup() se utiliza para configurar la ventana de visualización, el color de fondo, el modo de color y la velocidad de fotogramas. Luego, draw() contiene el código que se ejecuta repetidamente para dibujar en la pantalla.
 
+	1.	void setup() {:
+	•	Declara la función setup(). Esta función se ejecuta una vez al inicio del programa y se utiliza para realizar configuraciones iniciales.
+	2.	// Configurar el tamaño de la ventana de visualización:
+	•	Este es un comentario que describe la siguiente línea de código. Los comentarios no son ejecutados por el programa y se usan para explicar o anotar el código.
+	3.	size(800, 600);:
+	•	Establece el tamaño de la ventana de visualización en 800 píxeles de ancho y 600 píxeles de alto.
+	4.	// Establecer el color de fondo:
+	•	Comentario que describe la siguiente línea de código.
+	5.	background(255);:
+	•	Establece el color de fondo de la ventana en blanco. El parámetro 255 corresponde al valor máximo de blanco en la escala de grises (0 es negro, 255 es blanco).
+	6.	// Configurar el modo de color:
+	•	Comentario que describe la siguiente línea de código.
+	7.	colorMode(RGB);:
+	•	Configura el modo de color a RGB (Rojo, Verde, Azul). Esto significa que los colores se especificarán en términos de sus componentes rojo, verde y azul.
+	8.	// Configurar la velocidad de fotogramas:
+	•	Comentario que describe la siguiente línea de código.
+	9.	frameRate(30);:
+	•	Configura la velocidad de fotogramas a 30 cuadros por segundo. Esto significa que la función draw() se ejecutará 30 veces por segundo.
+	10.	}:
+	•	Cierra la función setup().
+ 	11.	void draw() {:
+	•	Declara la función draw(). Esta función se ejecuta continuamente, una vez por cada fotograma, permitiendo la animación y la actualización continua de la pantalla.
+	12.	// Dibujar un círculo en la posición del ratón:
+	•	Comentario que describe las siguientes líneas de código.
+	13.	fill(0);:
+	•	Establece el color de relleno para las formas que se dibujen a continuación. El parámetro 0 corresponde al color negro en la escala de grises.
+	14.	ellipse(mouseX, mouseY, 50, 50);:
+	•	Dibuja una elipse (círculo) en la posición actual del ratón (mouseX, mouseY). La elipse tiene un ancho y una altura de 50 píxeles. Como el ancho y la altura son iguales, se dibuja un círculo.
+	15.	}:
+	•	Cierra la función draw().
+
+ ___________________________________________________________________________________________________________________________________
+
 
 
 * Conceptos Básicos.
@@ -54,6 +87,8 @@ void draw() {
 }
 ```
 
+ ___________________________________________________________________________________________________________________________________
+
 
 2.	Colores:
 	•	Introducir background(), fill(), stroke() y noFill(), noStroke() para cambiar colores de fondo, relleno y contorno.
@@ -73,6 +108,8 @@ void draw() {
   ellipse(200, 200, 100, 100);
 }
 ```
+
+ ___________________________________________________________________________________________________________________________________
 
 Interactividad.
 
