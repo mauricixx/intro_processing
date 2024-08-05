@@ -174,6 +174,34 @@ void mouseReleased() {
 }
 ```
 
+```
+boolean isPressed = false;
+```
+1.	boolean:
+	•	boolean es un tipo de dato en Java (y Processing) que puede tener uno de dos valores: true o false. Los valores booleanos se utilizan típicamente para representar condiciones o estados que pueden ser verdaderos o falsos.
+2.	isPressed:
+	•	isPressed es el nombre de la variable que estamos declarando. Este nombre puede ser cualquier identificador válido en Java, pero isPressed es un nombre descriptivo que sugiere que la variable se utilizará para verificar si algo está presionado o no (por ejemplo, una tecla o un botón).
+3.	=:
+	•	El operador de asignación = se utiliza para asignar un valor a una variable. En este caso, estamos asignando el valor false a la variable isPressed.
+4.	false:
+	•	false es uno de los dos valores posibles para un tipo de dato booleano. Aquí, indica que inicialmente, la condición representada por isPressed no es verdadera. Es decir, lo que sea que isPressed está representando (por ejemplo, si un botón está presionado), inicialmente no está ocurriendo.
+5.	;:
+	•	El punto y coma ; se utiliza para terminar la declaración en Java y Processing.
+
+En resumen, boolean isPressed = false; declara una variable booleana llamada isPressed y le asigna el valor inicial false. Esto podría ser utilizado en un programa para rastrear si un botón, una tecla, o alguna otra condición está actualmente activa (presionada) o no. Por ejemplo, más adelante en el código podrías tener algo como:
+```
+if (mousePressed) {
+  isPressed = true;
+} else {
+  isPressed = false;
+}
+```
+Esto actualizaría el valor de isPressed según el estado del ratón.
+
+
+
+_________________________________________________________________________________________________________________________________________
+
 Animación
 
 1.	Concepto de draw():
