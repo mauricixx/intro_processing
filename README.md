@@ -123,8 +123,6 @@ Por ejemplo:
 	•	Cierra la función line().
 
 En resumen, line(50, 50, 350, 350); dibuja una línea que empieza en el punto (50, 50) y termina en el punto (350, 350). Estos puntos se refieren a coordenadas en la ventana de visualización de Processing, donde (0, 0) es la esquina superior izquierda y las coordenadas aumentan hacia la derecha y hacia abajo. La línea resultante es diagonal, yendo de la esquina superior izquierda a la inferior derecha dentro de los límites especificados.
- ___________________________________________________________________________________________________________________________________
-
 
 
 2.	Colores:
@@ -145,11 +143,13 @@ void draw() {
   ellipse(200, 200, 100, 100);
 }
 ```
+
 En Processing, la función background() se puede utilizar tanto en void setup() como en void draw(), pero cada ubicación tiene un propósito diferente y afecta el comportamiento de la animación de distintas maneras:
 
 1.	Usar background() en void setup():
 	•	La función setup() se ejecuta una sola vez al inicio del programa.
 	•	Si colocas background() en setup(), se establecerá un color de fondo al inicio y no se actualizará nuevamente durante la ejecución del programa. Esto significa que cualquier dibujo hecho en void draw() se acumulará sobre el fondo inicial, creando un efecto de superposición.
+
 ```
 void setup() {
   size(400, 400);
@@ -160,9 +160,11 @@ void draw() {
   ellipse(mouseX, mouseY, 50, 50);  // Los elipses se dibujan sobre el fondo sin borrarse
 }
 ```
+
 2.	Usar background() en void draw():
 	•	La función draw() se ejecuta continuamente en un bucle, permitiendo la actualización constante de la pantalla.
 	•	Si colocas background() en draw(), se establecerá el color de fondo en cada frame. Esto significa que cada nuevo dibujo en draw() se hará sobre un fondo limpio, creando la apariencia de movimiento y eliminando los dibujos anteriores.
+
 ```
 void setup() {
   size(400, 400);
@@ -173,10 +175,11 @@ void draw() {
   ellipse(mouseX, mouseY, 50, 50);  // Los elipses se dibujan y se "mueven" con el ratón
 }
 ```
+
 En resumen, usar background() en setup() establece un fondo fijo y todo lo que dibujes en draw() se acumulará sobre ese fondo. Usar background() en draw() actualiza el fondo en cada frame, creando un efecto de movimiento y eliminando los dibujos anteriores. La elección entre uno y otro depende del efecto visual que desees lograr en tu animación.
 
 
- ___________________________________________________________________________________________________________________________________
+ ____________________________________________________________________________________________________________________
 
 Interactividad.
 
