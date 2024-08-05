@@ -1,4 +1,25 @@
 # intro_processing
+HOLA MUNDO:
+```
+void setup() {
+  // Esta función se ejecuta una sola vez al inicio del programa.
+  
+  size(400, 400);
+  // Define el tamaño de la ventana de visualización en 400x400 píxeles.
+  
+  background(255);
+  // Establece el color de fondo de la ventana en blanco (255 en escala de grises).
+  
+  textSize(32);
+  // Define el tamaño de la fuente del texto en 32 píxeles.
+  
+  fill(0);
+  // Establece el color de relleno en negro (0 en escala de grises).
+  
+  text("Hola Mundo", 100, 200);
+  // Dibuja el texto "Hola Mundo" en las coordenadas (100, 200).
+}
+```
 
 En Processing, el método void setup() es una función fundamental que se utiliza para inicializar los valores y configuraciones del programa antes de que empiece a ejecutarse el bucle principal de dibujo, que está contenido en la función void draw().
 
