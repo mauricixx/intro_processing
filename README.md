@@ -105,6 +105,7 @@ En resumen, line(50, 50, 350, 350); dibuja una línea que empieza en el punto (5
  ___________________________________________________________________________________________________________________________________
 
 
+
 2.	Colores:
 	•	Introducir background(), fill(), stroke() y noFill(), noStroke() para cambiar colores de fondo, relleno y contorno.
 
