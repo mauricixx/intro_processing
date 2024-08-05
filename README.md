@@ -121,6 +121,55 @@ void mouseReleased() {
 }
 ```
 
+Animación
+
+1.	Concepto de draw():
+	•	Explicar que la función draw() se ejecuta en un bucle continuo.
+	•	Crear una simple animación.
+
+```
+float x = 0;
+
+void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  background(255);
+  ellipse(x, height/2, 50, 50);
+  x += 2; // Mover hacia la derecha
+  if (x > width) {
+    x = 0; // Reiniciar posición
+  }
+}
+```
+
+2.	Variables y Control:
+	•	Introducir variables y estructuras de control como if, for, while.
+
+```
+int y = 0;
+
+void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  background(255);
+  for (int i = 0; i < width; i += 50) {
+    ellipse(i, y, 25, 25);
+  }
+  y += 2;
+  if (y > height) {
+    y = 0;
+  }
+}
+```
+
+
+
+
+
 
 
 
