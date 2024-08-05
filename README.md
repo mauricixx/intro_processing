@@ -146,7 +146,115 @@ void draw() {
 
 2.	Eventos del Ratón:
 	•	Explicar mousePressed(), mouseReleased(), mouseDragged(), mouseMoved().
-	•	Ejemplo de cómo cambiar el color de una forma cuando se presiona el ratón.
+Estas funciones están diseñadas para detectar e interactuar con los eventos del ratón.
+
+mousePressed()
+```
+void mousePressed() {
+  // Código que se ejecuta cuando se presiona un botón del ratón
+}
+```
+1.	void mousePressed() {:
+	•	Declara la función mousePressed(). Esta función se llama automáticamente cuando se presiona cualquier botón del ratón.
+2.	// Código que se ejecuta cuando se presiona un botón del ratón:
+	•	Dentro de esta función, puedes escribir cualquier código que deseas ejecutar cuando el ratón se presiona. Esto podría ser para iniciar una acción, como dibujar un punto o iniciar un arrastre.
+3.	}:
+	•	Cierra la función mousePressed().
+
+mouseReleased()
+```
+void mouseReleased() {
+  // Código que se ejecuta cuando se libera un botón del ratón
+}
+```
+1.	void mouseReleased() {:
+	•	Declara la función mouseReleased(). Esta función se llama automáticamente cuando se libera cualquier botón del ratón.
+2.	// Código que se ejecuta cuando se libera un botón del ratón:
+	•	Dentro de esta función, puedes escribir cualquier código que deseas ejecutar cuando el ratón se libera. Esto podría ser para detener una acción iniciada por mousePressed(), como dejar de dibujar.
+3.	}:
+	•	Cierra la función mouseReleased().
+
+mouseDragged()
+```
+void mouseDragged() {
+  // Código que se ejecuta cuando el ratón se mueve mientras se presiona un botón
+}
+```
+1.	void mouseDragged() {:
+	•	Declara la función mouseDragged(). Esta función se llama automáticamente cuando el ratón se mueve mientras se mantiene presionado cualquier botón del ratón.
+2.	// Código que se ejecuta cuando el ratón se mueve mientras se presiona un botón:
+	•	Dentro de esta función, puedes escribir cualquier código que deseas ejecutar mientras arrastras el ratón. Esto se usa comúnmente para dibujar o arrastrar objetos en la pantalla.
+3.	}:
+	•	Cierra la función mouseDragged().
+
+mouseMoved()
+```
+void mouseDragged() {
+  // Código que se ejecuta cuando el ratón se mueve mientras se presiona un botón
+}
+```
+1.	void mouseDragged() {:
+	•	Declara la función mouseDragged(). Esta función se llama automáticamente cuando el ratón se mueve mientras se mantiene presionado cualquier botón del ratón.
+2.	// Código que se ejecuta cuando el ratón se mueve mientras se presiona un botón:
+	•	Dentro de esta función, puedes escribir cualquier código que deseas ejecutar mientras arrastras el ratón. Esto se usa comúnmente para dibujar o arrastrar objetos en la pantalla.
+3.	}:
+	•	Cierra la función mouseDragged().
+
+mouseMoved()
+```
+void mouseMoved() {
+  // Código que se ejecuta cuando el ratón se mueve sin presionar ningún botón
+}
+```
+1.	void mouseMoved() {:
+	•	Declara la función mouseMoved(). Esta función se llama automáticamente cuando el ratón se mueve sin presionar ningún botón.
+2.	// Código que se ejecuta cuando el ratón se mueve sin presionar ningún botón:
+	•	Dentro de esta función, puedes escribir cualquier código que deseas ejecutar cuando el ratón se mueve libremente. Esto podría ser para actualizar la posición de un cursor o realizar una acción en función de la posición del ratón.
+3.	}:
+	•	Cierra la función mouseMoved().
+
+Ejemplo de uso de estas funciones
+
+Aquí tienes un ejemplo completo que utiliza estas funciones para cambiar el color del fondo y dibujar círculos según las acciones del ratón:
+```
+void setup() {
+  size(400, 400);
+  background(255);
+}
+
+void draw() {
+  // Nada se actualiza continuamente en este ejemplo
+}
+
+void mousePressed() {
+  fill(0, 0, 255); // Azul
+  ellipse(mouseX, mouseY, 50, 50);
+}
+
+void mouseReleased() {
+  fill(255, 0, 0); // Rojo
+  ellipse(mouseX, mouseY, 50, 50);
+}
+
+void mouseDragged() {
+  fill(0, 255, 0); // Verde
+  ellipse(mouseX, mouseY, 50, 50);
+}
+
+void mouseMoved() {
+  fill(255, 255, 0); // Amarillo
+  ellipse(mouseX, mouseY, 50, 50);
+}
+```
+En este ejemplo:
+
+	•	mousePressed() dibuja un círculo azul donde se presiona el ratón.
+	•	mouseReleased() dibuja un círculo rojo donde se libera el ratón.
+	•	mouseDragged() dibuja círculos verdes mientras se arrastra el ratón.
+	•	mouseMoved() dibuja círculos amarillos cuando el ratón se mueve sin presionar ningún botón.
+
+
+- Ejemplo de cómo cambiar el color de una forma cuando se presiona el ratón.
 
 ```
 boolean isPressed = false;
