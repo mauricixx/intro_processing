@@ -89,7 +89,19 @@ void draw() {
   point(200, 200);
 }
 ```
+Por ejemplo: 
+1.	line(:
+	•	Este es el comando de Processing para dibujar una línea. La función line() requiere cuatro parámetros que especifican las coordenadas de los puntos inicial y final de la línea.
+2.	50, 50,:
+	•	Estos son los primeros dos parámetros de la función line(). El 50 primero es la coordenada x del punto inicial de la línea, y el segundo 50 es la coordenada y del punto inicial de la línea.
+	•	En este caso, la línea comienza en el punto (50, 50) en la ventana de visualización.
+3.	350, 350:
+	•	Estos son los segundos dos parámetros de la función line(). El 350 primero es la coordenada x del punto final de la línea, y el segundo 350 es la coordenada y del punto final de la línea.
+	•	En este caso, la línea termina en el punto (350, 350) en la ventana de visualización.
+4.	);:
+	•	Cierra la función line().
 
+En resumen, line(50, 50, 350, 350); dibuja una línea que empieza en el punto (50, 50) y termina en el punto (350, 350). Estos puntos se refieren a coordenadas en la ventana de visualización de Processing, donde (0, 0) es la esquina superior izquierda y las coordenadas aumentan hacia la derecha y hacia abajo. La línea resultante es diagonal, yendo de la esquina superior izquierda a la inferior derecha dentro de los límites especificados.
  ___________________________________________________________________________________________________________________________________
 
 
