@@ -306,10 +306,10 @@ void mouseMoved() {
 ```
 ###### En este ejemplo:
 
-	•	mousePressed() dibuja un círculo azul donde se presiona el ratón.
-	•	mouseReleased() dibuja un círculo rojo donde se libera el ratón.
-	•	mouseDragged() dibuja círculos verdes mientras se arrastra el ratón.
-	•	mouseMoved() dibuja círculos amarillos cuando el ratón se mueve sin presionar ningún botón.
+•	**mousePressed()** dibuja un círculo azul donde se presiona el ratón.
+•	**mouseReleased()** dibuja un círculo rojo donde se libera el ratón.
+•	**mouseDragged()** dibuja círculos verdes mientras se arrastra el ratón.
+•	**mouseMoved()** dibuja círculos amarillos cuando el ratón se mueve sin presionar ningún botón.
 
 
 ###### Ejemplo de cómo cambiar el color de una forma cuando se presiona el ratón.
