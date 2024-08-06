@@ -92,7 +92,7 @@ Este código crea una ventana de 800x600 píxeles con un fondo blanco y dibuja u
 
 #### **CONCEPTOS BÁSICOS**.
 
-I.	##### Dibujar Formas Simples:
+##### I.	**Dibujar Formas Simples**:
 	•	Explicar la función size() para definir el tamaño de la ventana.
 	•	Introducir las funciones line(), rect(), ellipse() y point() para dibujar líneas, rectángulos, elipses y puntos.
 
@@ -125,7 +125,7 @@ En resumen, **line(50, 50, 350, 350)**; dibuja una línea que empieza en el punt
 
 ___________________________________________________________________________________________________________________________________
 
-II.	##### **Colores**:
+##### II.	**Colores**:
 	•	Introducir background(), fill(), stroke() y noFill(), noStroke() para cambiar colores de fondo, relleno y contorno.
 
 ```
@@ -183,7 +183,7 @@ En resumen, usar background() en setup() establece un fondo fijo y todo lo que d
 
 #### Interactividad.
 
-I.	##### **Uso del Ratón**:
+##### I.	**Uso del Ratón**:
 	•	Introducir variables predefinidas como mouseX, mouseY.
 	•	Crear una simple interacción donde una forma sigue al ratón.
 
@@ -198,7 +198,7 @@ void draw() {
 }
 ```
 
-II.	##### **Eventos del Ratón**:
+##### II.	 **Eventos del Ratón**:
 	•	Explicar mousePressed(), mouseReleased(), mouseDragged(), mouseMoved().
 Estas funciones están diseñadas para detectar e interactuar con los eventos del ratón.
 
@@ -366,7 +366,7 @@ ________________________________________________________________________________
 
 #### Animación
 
-I.	##### **Concepto de draw()**:
+##### I.	**Concepto de draw()**:
 	•	Explicar que la función draw() se ejecuta en un bucle continuo.
 	•	Crear una simple animación.
 
@@ -387,7 +387,7 @@ void draw() {
 }
 ```
 
-II.	##### **Variables y Control**:
+##### II.	**Variables y Control**:
 	•	Introducir variables y estructuras de control como if, for, while.
 
 ```
