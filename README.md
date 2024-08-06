@@ -2,7 +2,7 @@
 #### HOLA MUNDO:
 `hola mundo`
 
-```
+`
 void setup() {
   // Esta función se ejecuta una sola vez al inicio del programa.
   
@@ -21,7 +21,7 @@ void setup() {
   text("Hola Mundo", 100, 200);
   // Dibuja el texto "Hola Mundo" en las coordenadas (100, 200).
 }
-```
+`
 
 En **Processing**, el método **void setup()** es una función fundamental que se utiliza para inicializar los valores y configuraciones del programa antes de que empiece a ejecutarse el bucle principal de dibujo, que está contenido en la función void draw().
 
