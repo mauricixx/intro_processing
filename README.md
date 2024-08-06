@@ -93,8 +93,9 @@ Este código crea una ventana de 800x600 píxeles con un fondo blanco y dibuja u
 #### **CONCEPTOS BÁSICOS**.
 
 ##### I.	**Dibujar Formas Simples**:
-	•	Explicar la función size() para definir el tamaño de la ventana.
-	•	Introducir las funciones line(), rect(), ellipse() y point() para dibujar líneas, rectángulos, elipses y puntos.
+
+•	Explicar la función size() para definir el tamaño de la ventana.
+•	Introducir las funciones line(), rect(), ellipse() y point() para dibujar líneas, rectángulos, elipses y puntos.
 
 ```
 void setup() {
@@ -126,7 +127,8 @@ En resumen, **line(50, 50, 350, 350)**; dibuja una línea que empieza en el punt
 ___________________________________________________________________________________________________________________________________
 
 ##### II.	**Colores**:
-	•	Introducir background(), fill(), stroke() y noFill(), noStroke() para cambiar colores de fondo, relleno y contorno.
+
+•	Introducir background(), fill(), stroke() y noFill(), noStroke() para cambiar colores de fondo, relleno y contorno.
 
 ```
 void setup() {
@@ -184,8 +186,9 @@ En resumen, usar background() en setup() establece un fondo fijo y todo lo que d
 #### Interactividad.
 
 ##### I.	**Uso del Ratón**:
-	•	Introducir variables predefinidas como mouseX, mouseY.
-	•	Crear una simple interacción donde una forma sigue al ratón.
+
+•	Introducir variables predefinidas como mouseX, mouseY.
+•	Crear una simple interacción donde una forma sigue al ratón.
 
 ```
 void setup() {
@@ -199,7 +202,8 @@ void draw() {
 ```
 
 ##### II.	 **Eventos del Ratón**:
-	•	Explicar mousePressed(), mouseReleased(), mouseDragged(), mouseMoved().
+
+•	Explicar mousePressed(), mouseReleased(), mouseDragged(), mouseMoved().
 Estas funciones están diseñadas para detectar e interactuar con los eventos del ratón.
 
 ###### mousePressed()
@@ -367,8 +371,9 @@ ________________________________________________________________________________
 #### Animación
 
 ##### I.	**Concepto de draw()**:
-	•	Explicar que la función draw() se ejecuta en un bucle continuo.
-	•	Crear una simple animación.
+
+•	Explicar que la función draw() se ejecuta en un bucle continuo.
+•	Crear una simple animación.
 
 ```
 float x = 0;
@@ -388,7 +393,8 @@ void draw() {
 ```
 
 ##### II.	**Variables y Control**:
-	•	Introducir variables y estructuras de control como if, for, while.
+
+•	Introducir variables y estructuras de control como if, for, while.
 
 ```
 int y = 0;
