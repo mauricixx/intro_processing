@@ -92,7 +92,7 @@ Este código crea una ventana de 800x600 píxeles con un fondo blanco y dibuja u
 
 #### **CONCEPTOS BÁSICOS**.
 
-I.	##### **Dibujar Formas Simples**:
+I.	##### Dibujar Formas Simples:
 	•	Explicar la función size() para definir el tamaño de la ventana.
 	•	Introducir las funciones line(), rect(), ellipse() y point() para dibujar líneas, rectángulos, elipses y puntos.
 
