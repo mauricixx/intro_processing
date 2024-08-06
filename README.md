@@ -90,10 +90,9 @@ Este código crea una ventana de 800x600 píxeles con un fondo blanco y dibuja u
  ___________________________________________________________________________________________________________________________________
 
 
+#### **CONCEPTOS BÁSICOS**.
 
-##### **Conceptos Básicos**.
-
-1.	Dibujar Formas Simples:
+I.	##### **Dibujar Formas Simples**:
 	•	Explicar la función size() para definir el tamaño de la ventana.
 	•	Introducir las funciones line(), rect(), ellipse() y point() para dibujar líneas, rectángulos, elipses y puntos.
 
@@ -110,7 +109,7 @@ void draw() {
   point(200, 200);
 }
 ```
-Por ejemplo: 
+###### Por ejemplo: 
 1.	line(:
 	•	Este es el comando de Processing para dibujar una línea. La función line() requiere cuatro parámetros que especifican las coordenadas de los puntos inicial y final de la línea.
 2.	50, 50,:
@@ -122,11 +121,11 @@ Por ejemplo:
 4.	);:
 	•	Cierra la función line().
 
-En resumen, line(50, 50, 350, 350); dibuja una línea que empieza en el punto (50, 50) y termina en el punto (350, 350). Estos puntos se refieren a coordenadas en la ventana de visualización de Processing, donde (0, 0) es la esquina superior izquierda y las coordenadas aumentan hacia la derecha y hacia abajo. La línea resultante es diagonal, yendo de la esquina superior izquierda a la inferior derecha dentro de los límites especificados.
+En resumen, **line(50, 50, 350, 350)**; dibuja una línea que empieza en el punto (50, 50) y termina en el punto (350, 350). Estos puntos se refieren a coordenadas en la ventana de visualización de Processing, donde (0, 0) es la esquina superior izquierda y las coordenadas aumentan hacia la derecha y hacia abajo. La línea resultante es diagonal, yendo de la esquina superior izquierda a la inferior derecha dentro de los límites especificados.
 
 ___________________________________________________________________________________________________________________________________
 
-2.	Colores:
+II.	##### **Colores**:
 	•	Introducir background(), fill(), stroke() y noFill(), noStroke() para cambiar colores de fondo, relleno y contorno.
 
 ```
@@ -182,9 +181,9 @@ En resumen, usar background() en setup() establece un fondo fijo y todo lo que d
 
  ____________________________________________________________________________________________________________________
 
-Interactividad.
+#### Interactividad.
 
-1.	Uso del Ratón:
+I.	##### **Uso del Ratón**:
 	•	Introducir variables predefinidas como mouseX, mouseY.
 	•	Crear una simple interacción donde una forma sigue al ratón.
 
@@ -199,11 +198,11 @@ void draw() {
 }
 ```
 
-2.	Eventos del Ratón:
+II.	##### **Eventos del Ratón**:
 	•	Explicar mousePressed(), mouseReleased(), mouseDragged(), mouseMoved().
 Estas funciones están diseñadas para detectar e interactuar con los eventos del ratón.
 
-mousePressed()
+###### mousePressed()
 ```
 void mousePressed() {
   // Código que se ejecuta cuando se presiona un botón del ratón
@@ -216,7 +215,7 @@ void mousePressed() {
 3.	}:
 	•	Cierra la función mousePressed().
 
-mouseReleased()
+###### mouseReleased()
 ```
 void mouseReleased() {
   // Código que se ejecuta cuando se libera un botón del ratón
@@ -229,7 +228,7 @@ void mouseReleased() {
 3.	}:
 	•	Cierra la función mouseReleased().
 
-mouseDragged()
+###### mouseDragged()
 ```
 void mouseDragged() {
   // Código que se ejecuta cuando el ratón se mueve mientras se presiona un botón
@@ -268,9 +267,9 @@ void mouseMoved() {
 3.	}:
 	•	Cierra la función mouseMoved().
 
-Ejemplo de uso de estas funciones
+###### Ejemplo de uso de estas funciones
 
-Aquí tienes un ejemplo completo que utiliza estas funciones para cambiar el color del fondo y dibujar círculos según las acciones del ratón:
+Ejemplo completo que utiliza estas funciones para cambiar el color del fondo y dibujar círculos según las acciones del ratón:
 ```
 void setup() {
   size(400, 400);
@@ -301,7 +300,7 @@ void mouseMoved() {
   ellipse(mouseX, mouseY, 50, 50);
 }
 ```
-En este ejemplo:
+###### En este ejemplo:
 
 	•	mousePressed() dibuja un círculo azul donde se presiona el ratón.
 	•	mouseReleased() dibuja un círculo rojo donde se libera el ratón.
@@ -309,7 +308,7 @@ En este ejemplo:
 	•	mouseMoved() dibuja círculos amarillos cuando el ratón se mueve sin presionar ningún botón.
 
 
-- Ejemplo de cómo cambiar el color de una forma cuando se presiona el ratón.
+###### Ejemplo de cómo cambiar el color de una forma cuando se presiona el ratón.
 
 ```
 boolean isPressed = false;
@@ -365,9 +364,9 @@ Esto actualizaría el valor de isPressed según el estado del ratón.
 
 _________________________________________________________________________________________________________________________________________
 
-Animación
+#### Animación
 
-1.	Concepto de draw():
+I.	##### **Concepto de draw()**:
 	•	Explicar que la función draw() se ejecuta en un bucle continuo.
 	•	Crear una simple animación.
 
@@ -388,7 +387,7 @@ void draw() {
 }
 ```
 
-2.	Variables y Control:
+II.	##### **Variables y Control**:
 	•	Introducir variables y estructuras de control como if, for, while.
 
 ```
