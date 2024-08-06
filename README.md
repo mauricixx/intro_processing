@@ -1,5 +1,7 @@
 # intro_processing
 #### HOLA MUNDO:
+`hola mundo`
+
 ```
 void setup() {
   // Esta función se ejecuta una sola vez al inicio del programa.
