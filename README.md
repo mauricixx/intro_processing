@@ -125,6 +125,41 @@ void draw() {
 
 En resumen, **line(50, 50, 350, 350)**; dibuja una línea que empieza en el punto (50, 50) y termina en el punto (350, 350). Estos puntos se refieren a coordenadas en la ventana de visualización de Processing, donde (0, 0) es la esquina superior izquierda y las coordenadas aumentan hacia la derecha y hacia abajo. La línea resultante es diagonal, yendo de la esquina superior izquierda a la inferior derecha dentro de los límites especificados.
 
+#### Sistema de Coordenadas en Processing.
+
+En Processing, el sistema de coordenadas de la pantalla es diferente al tradicional sistema de coordenadas cartesianas que se usa en matemáticas. Aquí está una explicación del por qué y cómo funciona este sistema en Processing:
+
+
+
+##### 1.	Origen en la esquina superior izquierda:
+•	En Processing, el punto (0, 0) está ubicado en la esquina superior izquierda de la ventana.
+•	Esta convención proviene del diseño de gráficos en computadoras y pantallas, donde las coordenadas de los píxeles se cuentan a partir de la esquina superior izquierda.
+
+##### 2.	Eje X:
+•	El eje X aumenta hacia la derecha.
+•	Esto es consistente con el sistema de coordenadas cartesianas.
+
+##### 3.	Eje Y:
+•	El eje Y aumenta hacia abajo.
+•	Esto es opuesto al sistema de coordenadas cartesianas, donde el eje Y positivo va hacia arriba.
+•	La razón para esto es histórica y práctica: las pantallas de las computadoras y los sistemas gráficos tempranos se diseñaron de esta manera, ya que es más intuitivo para representar imágenes y textos que se leen de arriba hacia abajo.
+
+##### Razones Históricas y Prácticas
+
+•	Pantallas de Raster:
+•	Las pantallas de raster, que se utilizan en la mayoría de los monitores de computadora, escanean de izquierda a derecha y de arriba hacia abajo. Así que fue natural definir el origen en la esquina superior izquierda y hacer que las coordenadas y aumenten hacia abajo.
+•	Facilidad de Uso en Gráficos:
+•	Cuando se dibujan elementos gráficos y textos, a menudo es más conveniente empezar desde la parte superior de la pantalla e ir bajando, especialmente para interfaces de usuario, textos, y otras representaciones visuales que siguen un flujo de arriba hacia abajo.
+
+##### Ejemplo Visual
+
+##### Imaginemos una ventana de Processing de 100x100 píxeles:
+
+•	El punto (0, 0) está en la esquina superior izquierda.
+•	El punto (100, 0) está en la esquina superior derecha.
+•	El punto (0, 100) está en la esquina inferior izquierda.
+•	El punto (100, 100) está en la esquina inferior derecha.
+
 ___________________________________________________________________________________________________________________________________
 
 ##### II.	**Colores**:
