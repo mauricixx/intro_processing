@@ -123,8 +123,7 @@ void draw() {
 4.	);:
 	•	Cierra la función line().
 
-<img src="https://raw.githubusercontent.com/mauricixx/mycelia/main/img/bordandocirculo.png"  width="320" height="320" />
-
+<img src="https://raw.githubusercontent.com/mauricixx/intro_processing/main/img/dibujar_linea_img.jpg"/>
 
 En resumen, **line(50, 50, 350, 350)**; dibuja una línea que empieza en el punto (50, 50) y termina en el punto (350, 350). Estos puntos se refieren a coordenadas en la ventana de visualización de Processing, donde (0, 0) es la esquina superior izquierda y las coordenadas aumentan hacia la derecha y hacia abajo. La línea resultante es diagonal, yendo de la esquina superior izquierda a la inferior derecha dentro de los límites especificados.
 
