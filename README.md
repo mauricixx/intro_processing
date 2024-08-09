@@ -1,7 +1,7 @@
 # intro_processing
 #### HOLA MUNDO:
 
-```
+```js
 void setup() {
   // Esta función se ejecuta una sola vez al inicio del programa.
   
@@ -31,7 +31,8 @@ En **Processing**, el método **void setup()** es una función fundamental que s
 3.	Configuraciones Iniciales: Puedes definir el color de fondo inicial con background(), establecer el modo de color con colorMode(), y configurar otros parámetros como la velocidad de fotogramas con frameRate(), entre otros.
 
 ###### Ejemplo básico que muestra cómo se utiliza void setup():
-```
+
+```js 
 void setup() {
   // Configurar el tamaño de la ventana de visualización
   size(800, 600);
@@ -46,6 +47,7 @@ void setup() {
   frameRate(30);
 }
 ```
+
 1.	void setup() {:
 	•	Declara la función setup(). Esta función se ejecuta una vez al inicio del programa y se utiliza para realizar configuraciones iniciales.
 2.	// Configurar el tamaño de la ventana de visualización:
@@ -67,13 +69,14 @@ void setup() {
 10.	}:
 	•	Cierra la función setup().
 
-```
+```js
 void draw() {
   // Dibujar un círculo en la posición del ratón
   fill(0);
   ellipse(mouseX, mouseY, 50, 50);
 }
 ```
+
 11.	void draw() {:
 	•	Declara la función draw(). Esta función se ejecuta continuamente, una vez por cada fotograma, permitiendo la animación y la actualización continua de la pantalla.
 12.	// Dibujar un círculo en la posición del ratón:
@@ -98,7 +101,7 @@ Este código crea una ventana de 800x600 píxeles con un fondo blanco y dibuja u
 •	Explicar la función size() para definir el tamaño de la ventana.
 •	Introducir las funciones line(), rect(), ellipse() y point() para dibujar líneas, rectángulos, elipses y puntos.
 
-```
+```js
 void setup() {
   size(400, 400);
 }
@@ -162,7 +165,7 @@ En Processing, el sistema de coordenadas de la pantalla es diferente al tradicio
 •	El punto (0, 100) está en la esquina inferior izquierda.
 •	El punto (100, 100) está en la esquina inferior derecha.
 
-```
+```js
 size(100, 100);
 point(0, 0);     // Esquina superior izquierda
 point(100, 0);   // Esquina superior derecha
@@ -176,7 +179,7 @@ ________________________________________________________________________________
 
 •	Introducir background(), fill(), stroke() y noFill(), noStroke() para cambiar colores de fondo, relleno y contorno.
 
-```
+```js
 void setup() {
   size(400, 400);
   background(255);
@@ -198,7 +201,7 @@ void draw() {
 	•	La función setup() se ejecuta una sola vez al inicio del programa.
 	•	Si colocas background() en setup(), se establecerá un color de fondo al inicio y no se actualizará nuevamente durante la ejecución del programa. Esto significa que cualquier dibujo hecho en void draw() se acumulará sobre el fondo inicial, creando un efecto de superposición.
 
-```
+```js
 void setup() {
   size(400, 400);
   background(200);  // El fondo se establece una sola vez al inicio
@@ -213,7 +216,7 @@ void draw() {
 	•	La función draw() se ejecuta continuamente en un bucle, permitiendo la actualización constante de la pantalla.
 	•	Si colocas background() en draw(), se establecerá el color de fondo en cada frame. Esto significa que cada nuevo dibujo en draw() se hará sobre un fondo limpio, creando la apariencia de movimiento y eliminando los dibujos anteriores.
 
-```
+```js
 void setup() {
   size(400, 400);
 }
@@ -236,7 +239,7 @@ En resumen, usar background() en setup() establece un fondo fijo y todo lo que d
 •	Introducir variables predefinidas como mouseX, mouseY.
 •	Crear una simple interacción donde una forma sigue al ratón.
 
-```
+```js
 void setup() {
   size(400, 400);
 }
@@ -253,7 +256,7 @@ void draw() {
 Estas funciones están diseñadas para detectar e interactuar con los eventos del ratón.
 
 ###### mousePressed()
-```
+```js
 void mousePressed() {
   // Código que se ejecuta cuando se presiona un botón del ratón
 }
@@ -266,7 +269,7 @@ void mousePressed() {
 	•	Cierra la función mousePressed().
 
 ###### mouseReleased()
-```
+```js
 void mouseReleased() {
   // Código que se ejecuta cuando se libera un botón del ratón
 }
@@ -279,7 +282,7 @@ void mouseReleased() {
 	•	Cierra la función mouseReleased().
 
 ###### mouseDragged()
-```
+```js
 void mouseDragged() {
   // Código que se ejecuta cuando el ratón se mueve mientras se presiona un botón
 }
@@ -292,7 +295,7 @@ void mouseDragged() {
 	•	Cierra la función mouseDragged().
 
 mouseMoved()
-```
+```js
 void mouseDragged() {
   // Código que se ejecuta cuando el ratón se mueve mientras se presiona un botón
 }
@@ -305,7 +308,7 @@ void mouseDragged() {
 	•	Cierra la función mouseDragged().
 
 mouseMoved()
-```
+```js
 void mouseMoved() {
   // Código que se ejecuta cuando el ratón se mueve sin presionar ningún botón
 }
@@ -320,7 +323,7 @@ void mouseMoved() {
 ###### Ejemplo de uso de estas funciones
 
 Ejemplo completo que utiliza estas funciones para cambiar el color del fondo y dibujar círculos según las acciones del ratón:
-```
+```js
 void setup() {
   size(400, 400);
   background(255);
@@ -360,7 +363,7 @@ void mouseMoved() {
 
 ###### Ejemplo de cómo cambiar el color de una forma cuando se presiona el ratón.
 
-```
+```js
 boolean isPressed = false;
 
 void setup() {
@@ -386,7 +389,7 @@ void mouseReleased() {
 }
 ```
 
-```
+```js
 boolean isPressed = false;
 ```
 1.	boolean:
@@ -401,7 +404,7 @@ boolean isPressed = false;
 	•	El punto y coma ; se utiliza para terminar la declaración en Java y Processing.
 
 En resumen, boolean isPressed = false; declara una variable booleana llamada isPressed y le asigna el valor inicial false. Esto podría ser utilizado en un programa para rastrear si un botón, una tecla, o alguna otra condición está actualmente activa (presionada) o no. Por ejemplo, más adelante en el código podrías tener algo como:
-```
+```js
 if (mousePressed) {
   isPressed = true;
 } else {
@@ -421,7 +424,7 @@ ________________________________________________________________________________
 •	Explicar que la función draw() se ejecuta en un bucle continuo.
 •	Crear una simple animación.
 
-```
+```js
 float x = 0;
 
 void setup() {
@@ -442,7 +445,7 @@ void draw() {
 
 •	Introducir variables y estructuras de control como if, for, while.
 
-```
+```js
 int y = 0;
 
 void setup() {
