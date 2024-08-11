@@ -232,7 +232,7 @@ En resumen, usar background() en setup() establece un fondo fijo y todo lo que d
 
  ____________________________________________________________________________________________________________________
 
-### Interactividad. \textcolor{green}{green}
+### <span style="color:green">**Interactividad.**</span>
 
 ##### I.	**Uso del Ratón**:
 
