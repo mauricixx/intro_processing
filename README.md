@@ -173,7 +173,7 @@ point(0, 100);   // Esquina inferior izquierda
 point(100, 100); // Esquina inferior derecha
 ```
 
-<a href="https://mauricixx.github.io/cartesiano/index.html">Enlace para localizar puntos en un plano cartesiano y generar una línea.</a>
+<a href="https://mauricixx.github.io/intro_processing/cartesiano/index.html">Enlace para localizar puntos en un plano cartesiano y generar una línea.</a>
 
 .___________________________________________________________________________________________________________________________________
 
