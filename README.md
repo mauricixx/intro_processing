@@ -173,6 +173,7 @@ point(0, 100);   // Esquina inferior izquierda
 point(100, 100); // Esquina inferior derecha
 ```
 
+<a href="https://mauricixx.github.io/">Enlace para localizar puntos en un plano cartesiano y generar una línea.</a>
 ___________________________________________________________________________________________________________________________________
 
 ##### II.	**Colores**:
