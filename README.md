@@ -516,6 +516,60 @@ Notas:
 •	Asegúrate de que la carpeta donde se guardarán las imágenes (output/ en el ejemplo) exista. De lo contrario, Processing la creará automáticamente.
 •	Los archivos de imagen se guardan en el mismo directorio donde se encuentra el sketch de Processing.
 
+##### Capturar un video en Processing.
+
+Guardar un video directamente desde Processing no es tan directo como guardar imágenes. Processing no tiene una función incorporada para exportar video, pero puedes usar la biblioteca Video Export para lograrlo. Aquí te muestro cómo hacerlo:
+
+I. Instalación de la Biblioteca Video Export
+
+1.	Abre Processing.
+2.	Ve a Sketch > Import Library > Add Library….
+3.	Busca Video Export y haz clic en Install.
+
+II. Código para Guardar un Video
+
+Una vez que hayas instalado la biblioteca, puedes usar el siguiente código para capturar y guardar un video:
+```js
+import com.hamoid.*;
+
+VideoExport videoExport;
+
+void setup() {
+  size(640, 480);
+  videoExport = new VideoExport(this, "output_video.mp4"); // Nombre del archivo de video
+  videoExport.startMovie(); // Inicia la grabación del video
+}
+
+void draw() {
+  background(255);
+  ellipse(mouseX, mouseY, 50, 50);
+
+  videoExport.saveFrame(); // Guarda cada cuadro en el video
+}
+
+void keyPressed() {
+  if (key == 'q' || key == 'Q') {
+    videoExport.endMovie(); // Finaliza la grabación del video al presionar 'Q'
+    exit(); // Cierra el programa
+  }
+}
+```
+
+III. Explicación del Código
+
+•	VideoExport videoExport;: Declara una variable para manejar la exportación de video.
+•	videoExport = new VideoExport(this, "output_video.mp4");: Inicializa la exportación de video con el nombre del archivo donde se guardará.
+•	videoExport.startMovie();: Comienza la grabación del video.
+•	videoExport.saveFrame();: Guarda el cuadro actual en el video. Esta función debe ser llamada dentro de draw() para capturar cada fotograma.
+•	videoExport.endMovie();: Termina la grabación del video y guarda el archivo. Puedes asociar esta función a una tecla, como se muestra en el ejemplo, para detener la grabación cuando lo desees.
+
+IV. Notas Importantes
+
+•	El video se guardará en la misma carpeta que contiene tu sketch de Processing.
+•	Asegúrate de no omitir videoExport.endMovie();, ya que es necesario para finalizar y guardar el video correctamente.
+•	Si tu sketch es largo o tiene un alto número de cuadros por segundo (fps), el archivo de video podría ser grande. Ajusta la calidad y duración según tus necesidades.
+
+
 
 
 
