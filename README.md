@@ -466,6 +466,59 @@ void draw() {
 }
 ```
 
+##### Guardar una imagen en Processing.
+
+Para capturar y guardar una imagen en Processing, puedes usar la función save() o saveFrame() dependiendo de tus necesidades. Aquí te explico cómo utilizarlas:
+
+1. Guardar una Imagen en un Momento Específico
+
+Si quieres guardar una imagen en un momento específico (por ejemplo, cuando se presiona una tecla), puedes usar la función save(). Este método guarda la pantalla actual como un archivo de imagen.
+
+```js
+void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  background(255);
+  ellipse(mouseX, mouseY, 50, 50);
+}
+
+void keyPressed() {
+  if (key == 's' || key == 'S') { // Presiona 'S' para guardar la imagen
+    save("imagen_guardada.png");
+  }
+}
+```
+
+2. Guardar una Secuencia de Imágenes
+
+Si deseas capturar y guardar una secuencia de imágenes (por ejemplo, para crear una animación), puedes usar saveFrame(). Esta función guarda automáticamente una secuencia de imágenes numeradas.
+
+```js
+void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  background(255);
+  ellipse(mouseX, mouseY, 50, 50);
+
+  // Guarda cada cuadro como una imagen numerada
+  saveFrame("output/imagen-####.png");
+}
+```
+
+##### En este caso, #### se reemplaza por el número del fotograma (por ejemplo, imagen-0001.png, imagen-0002.png, etc.).
+
+Notas:
+
+•	Asegúrate de que la carpeta donde se guardarán las imágenes (output/ en el ejemplo) exista. De lo contrario, Processing la creará automáticamente.
+•	Los archivos de imagen se guardan en el mismo directorio donde se encuentra el sketch de Processing.
+
+
+
+
 
 
 
