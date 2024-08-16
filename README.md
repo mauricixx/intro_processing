@@ -466,11 +466,11 @@ void draw() {
 }
 ```
 
-##### Guardar una imagen en Processing.
+#### Guardar una imagen en Processing.
 
 Para capturar y guardar una imagen en Processing, puedes usar la función save() o saveFrame() dependiendo de tus necesidades. Aquí te explico cómo utilizarlas:
 
-1. Guardar una Imagen en un Momento Específico
+##### 1. Guardar una Imagen en un Momento Específico
 
 Si quieres guardar una imagen en un momento específico (por ejemplo, cuando se presiona una tecla), puedes usar la función save(). Este método guarda la pantalla actual como un archivo de imagen.
 
@@ -491,7 +491,7 @@ void keyPressed() {
 }
 ```
 
-2. Guardar una Secuencia de Imágenes
+##### 2. Guardar una Secuencia de Imágenes
 
 Si deseas capturar y guardar una secuencia de imágenes (por ejemplo, para crear una animación), puedes usar saveFrame(). Esta función guarda automáticamente una secuencia de imágenes numeradas.
 
