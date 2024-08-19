@@ -491,7 +491,51 @@ void keyPressed() {
 }
 ```
 
-##### 2. Guardar una Secuencia de Imágenes
+##### 2. Cambiar Color de Fondo.
+
+```js
+int sliderX;  // Posición x del slider
+int sliderY;  // Posición y del slider
+int sliderWidth;  // Ancho del slider
+int sliderHeight;  // Altura del slider
+int sliderValue;  // Valor del slider (posición de la perilla)
+
+void setup() {
+  size(400, 400);
+  colorMode(HSB, 360, 100, 100);  // Configura el modo de color a HSB (Hue, Saturation, Brightness)
+  
+  // Inicializa las dimensiones del slider
+  sliderX = 50;
+  sliderY = height - 50;
+  sliderWidth = 300;
+  sliderHeight = 20;
+  sliderValue = sliderX;  // El valor inicial del slider coincide con la posición x inicial
+}
+
+void draw() {
+  // Calcula el color de fondo basado en la posición del slider
+  float hue = map(sliderValue, sliderX, sliderX + sliderWidth, 0, 360);
+  background(hue, 100, 100);
+  
+  // Dibuja el slider
+  fill(255);
+  rect(sliderX, sliderY, sliderWidth, sliderHeight);
+  
+  // Dibuja la perilla del slider
+  fill(0);
+  rect(sliderValue, sliderY, 10, sliderHeight);
+}
+
+void mouseDragged() {
+  // Si el ratón está sobre el slider, actualiza la posición del valor del slider
+  if (mouseX >= sliderX && mouseX <= sliderX + sliderWidth && mouseY >= sliderY && mouseY <= sliderY + sliderHeight) {
+    sliderValue = mouseX;
+  }
+}
+```
+
+
+##### 3. Guardar una Secuencia de Imágenes
 
 Si deseas capturar y guardar una secuencia de imágenes (por ejemplo, para crear una animación), puedes usar saveFrame(). Esta función guarda automáticamente una secuencia de imágenes numeradas.
 
