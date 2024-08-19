@@ -491,6 +491,26 @@ void keyPressed() {
 }
 ```
 
+```js
+void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  background(255);
+  ellipse(mouseX, mouseY, 50, 50);
+
+  // Guarda cada cuadro como una imagen numerada
+  //saveFrame("output/imagen-####.png");
+}
+
+void keyPressed() {
+  if (key == 's' || key == 'S') { // Presiona 'S' para guardar la imagen
+    save("output/imagen_1.png");
+  }
+}
+```
+
 ##### 2. Cambiar Color de Fondo.
 
 ```js
