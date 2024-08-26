@@ -635,7 +635,7 @@ IV. Notas Importantes
 
 ****
 
-##### creación de perilla:
+##### creación de perilla (PROCESSING)
 ```js
 float angle = 0; // Knob angle
 float radius = 50; // Radius of the knob
@@ -687,8 +687,60 @@ void mouseReleased() {
   dragging = false;
 }
 ```
+##### creación de perilla (P5JS):
+```js
+let angle = 0; // Ángulo del knob
+let radius = 50; // Radio del knob
+let centerX, centerY; // Centro del knob
+let dragging = false; // ¿Se está arrastrando el knob?
 
-##### Movimiento cubo + perilla.
+function setup() {
+  createCanvas(400, 400);
+  centerX = width / 2;
+  centerY = height / 2;
+}
+
+function draw() {
+  background(255);
+  
+  // Dibujar el knob
+  fill(200);
+  ellipse(centerX, centerY, radius * 2, radius * 2);
+  
+  // Dibujar el indicador del knob
+  let knobX = centerX + cos(angle) * radius;
+  let knobY = centerY + sin(angle) * radius;
+  stroke(0);
+  strokeWeight(4);
+  line(centerX, centerY, knobX, knobY);
+  
+  // Detectar si se está arrastrando
+  if (dragging) {
+    let dx = mouseX - centerX;
+    let dy = mouseY - centerY;
+    angle = atan2(dy, dx); // Actualizar el ángulo basado en la posición del mouse
+  }
+  
+  // Mostrar el valor del ángulo
+  fill(0);
+  textSize(16);
+  text("Angle: " + degrees(angle).toFixed(2), 10, height - 20);
+}
+
+function mousePressed() {
+  let dx = mouseX - centerX;
+  let dy = mouseY - centerY;
+  if (sqrt(dx * dx + dy * dy) < radius) { // Verificar si el mouse está dentro del radio del knob
+    dragging = true;
+  }
+}
+
+function mouseReleased() {
+  dragging = false;
+}
+```
+
+##### Movimiento cubo + perilla (PROCESSING):
 
 ```js
 int knobX = 100;  // Posición de la perilla.
@@ -753,7 +805,73 @@ void mouseReleased() {
   dragging = false;
 }
 ```
-#### Movimiento cubo con perillas.
+##### Movimiento cubo + perilla (P5JS):
+```js
+let knobX = 100;  // Posición de la perilla.
+let knobY = 100;
+let knobRadius = 50;
+let angle = 0;  // Ángulo inicial de la perilla
+let dragging = false;
+
+let cubeX = 300;  // Posición inicial del cubo
+let cubeY = 200;
+
+function setup() {
+  createCanvas(600, 400, WEBGL);
+}
+
+function draw() {
+  background(255);
+  
+  // Dibujar la perilla (knob)
+  push();
+  translate(knobX - width / 2, knobY - height / 2);  // Ajuste para coordenadas WEBGL
+  stroke(0);
+  fill(200);
+  ellipse(0, 0, knobRadius * 2, knobRadius * 2);
+  
+  // Dibujar el indicador de la perilla
+  let indicatorX = cos(angle) * knobRadius;
+  let indicatorY = sin(angle) * knobRadius;
+  stroke(0);
+  line(0, 0, indicatorX, indicatorY);
+  pop();
+  
+  // Actualizar la posición del cubo basada en el ángulo de la perilla
+  cubeX = map(angle, -PI, PI, 50, width - 50);
+  
+  // Dibujar el cubo
+  push();
+  translate(cubeX - width / 2, cubeY - height / 2);
+  rotateY(angle);
+  fill(150, 100, 250);
+  box(50);
+  pop();
+}
+
+function mousePressed() {
+  // Chequear si el mouse está presionado en la perilla
+  if (dist(mouseX, mouseY, knobX, knobY) < knobRadius) {
+    dragging = true;
+  }
+}
+
+function mouseDragged() {
+  if (dragging) {
+    // Calcular el ángulo basado en la posición del mouse
+    let dx = mouseX - knobX;
+    let dy = mouseY - knobY;
+    angle = atan2(dy, dx);
+  }
+}
+
+function mouseReleased() {
+  dragging = false;
+}
+```
+
+
+#### Movimiento 1 cubo con  3 perillas. (PROCESSING)
 ```js
 int knobX1 = 100, knobY1 = 100;  // Posición del primer knob
 int knobX2 = 100, knobY2 = 200;  // Posición del segundo knob
@@ -854,6 +972,107 @@ void mouseReleased() {
   dragging3 = false;
 }
 ```
+#### Movimiento cubo con perillas. (P5JS)
+```js
+let knobX1 = 100, knobY1 = 100;  // Posición del primer knob
+let knobX2 = 100, knobY2 = 200;  // Posición del segundo knob
+let knobX3 = 100, knobY3 = 300;  // Posición del tercer knob
+let knobRadius = 50;  // Radio de los knobs
+
+let angle1 = 0, angle2 = 0, angle3 = 0;  // Ángulos para los knobs
+let dragging1 = false, dragging2 = false, dragging3 = false;  // Para detectar si se está arrastrando un knob
+
+let cubeX = 300, cubeY = 200, cubeZ = -200;  // Posición inicial del cubo
+
+function setup() {
+  createCanvas(600, 400, WEBGL);  // Tamaño del lienzo en 3D
+}
+
+function draw() {
+  background(255);  // Fondo blanco
+  
+  // Dibujar el primer knob
+  drawKnob(knobX1, knobY1, angle1);
+  // Dibujar el segundo knob
+  drawKnob(knobX2, knobY2, angle2);
+  // Dibujar el tercer knob
+  drawKnob(knobX3, knobY3, angle3);
+  
+  // Actualizar la posición del cubo según los ángulos de los knobs
+  cubeX = map(angle1, -PI, PI, 50, width - 50);  // Mueve el cubo en el eje X
+  cubeY = map(angle2, -PI, PI, 50, height - 50);  // Mueve el cubo en el eje Y
+  cubeZ = map(angle3, -PI, PI, -300, 300);  // Mueve el cubo en el eje Z
+  
+  // Dibujar el cubo
+  push();
+  translate(cubeX - width/2, cubeY - height/2, cubeZ);
+  rotateY(angle1);  // Rotación del cubo en el eje Y
+  rotateX(angle2);  // Rotación del cubo en el eje X
+  rotateZ(angle3);  // Rotación del cubo en el eje Z
+  fill(150, 100, 250);  // Color del cubo
+  box(50);  // Tamaño del cubo
+  pop();
+}
+
+function drawKnob(x, y, angle) {
+  // Función para dibujar cada knob
+  push();
+  translate(x - width/2, y - height/2);  // Ajuste para sistema de coordenadas WEBGL
+  stroke(0);
+  fill(200);
+  ellipse(0, 0, knobRadius * 2, knobRadius * 2);  // Dibuja el círculo del knob
+  
+  // Dibuja el indicador del knob
+  let indicatorX = cos(angle) * knobRadius;
+  let indicatorY = sin(angle) * knobRadius;
+  stroke(0);
+  line(0, 0, indicatorX, indicatorY);  // Línea que muestra el ángulo del knob
+  pop();
+}
+
+function mousePressed() {
+  // Detectar si el mouse presiona el primer knob
+  if (dist(mouseX, mouseY, knobX1, knobY1) < knobRadius) {
+    dragging1 = true;
+  }
+  // Detectar si el mouse presiona el segundo knob
+  if (dist(mouseX, mouseY, knobX2, knobY2) < knobRadius) {
+    dragging2 = true;
+  }
+  // Detectar si el mouse presiona el tercer knob
+  if (dist(mouseX, mouseY, knobX3, knobY3) < knobRadius) {
+    dragging3 = true;
+  }
+}
+
+function mouseDragged() {
+  // Ajustar el ángulo del primer knob mientras se arrastra
+  if (dragging1) {
+    let dx = mouseX - knobX1;
+    let dy = mouseY - knobY1;
+    angle1 = atan2(dy, dx);
+  }
+  // Ajustar el ángulo del segundo knob mientras se arrastra
+  if (dragging2) {
+    let dx = mouseX - knobX2;
+    let dy = mouseY - knobY2;
+    angle2 = atan2(dy, dx);
+  }
+  // Ajustar el ángulo del tercer knob mientras se arrastra
+  if (dragging3) {
+    let dx = mouseX - knobX3;
+    let dy = mouseY - knobY3;
+    angle3 = atan2(dy, dx);
+  }
+}
+
+function mouseReleased() {
+  // Dejar de arrastrar los knobs
+  dragging1 = false;
+  dragging2 = false;
+  dragging3 = false;
+}
+``
 
 
 
