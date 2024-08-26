@@ -972,7 +972,8 @@ void mouseReleased() {
   dragging3 = false;
 }
 ```
-#### Movimiento cubo con perillas. (P5JS)
+
+#### Movimiento 1 cubo con  3 perillas. (P5JS)
 ```js
 let knobX1 = 100, knobY1 = 100;  // Posición del primer knob
 let knobX2 = 100, knobY2 = 200;  // Posición del segundo knob
@@ -1072,18 +1073,7 @@ function mouseReleased() {
   dragging2 = false;
   dragging3 = false;
 }
-``
-
-
-
-
-
-
-
-
-
-
-
+```
 
 
 
