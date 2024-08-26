@@ -633,6 +633,234 @@ IV. Notas Importantes
 •	Asegúrate de no omitir videoExport.endMovie();, ya que es necesario para finalizar y guardar el video correctamente.
 •	Si tu sketch es largo o tiene un alto número de cuadros por segundo (fps), el archivo de video podría ser grande. Ajusta la calidad y duración según tus necesidades.
 
+****
+
+##### creación de perilla:
+```js
+float angle = 0; // Knob angle
+float radius = 50; // Radius of the knob
+float centerX, centerY; // Center of the knob
+boolean dragging = false; // Is the knob being dragged?
+
+void setup() {
+  size(400, 400);
+  centerX = width / 2;
+  centerY = height / 2;
+}
+
+void draw() {
+  background(255);
+  
+  // Draw the knob
+  fill(200);
+  ellipse(centerX, centerY, radius * 2, radius * 2);
+  
+  // Draw the knob pointer
+  float knobX = centerX + cos(angle) * radius;
+  float knobY = centerY + sin(angle) * radius;
+  stroke(0);
+  strokeWeight(4);
+  line(centerX, centerY, knobX, knobY);
+  
+  // Detect dragging
+  if (dragging) {
+    float dx = mouseX - centerX;
+    float dy = mouseY - centerY;
+    angle = atan2(dy, dx); // Update angle based on mouse position
+  }
+  
+  // Display the angle value
+  fill(0);
+  textSize(16);
+  text("Angle: " + degrees(angle), 10, height - 20);
+}
+
+void mousePressed() {
+  float dx = mouseX - centerX;
+  float dy = mouseY - centerY;
+  if (sqrt(dx*dx + dy*dy) < radius) { // Check if the mouse is within the knob's radius
+    dragging = true;
+  }
+}
+
+void mouseReleased() {
+  dragging = false;
+}
+```
+
+##### Movimiento cubo + perilla.
+
+```js
+int knobX = 100;  // Posición de la perilla.
+int knobY = 100;
+int knobRadius = 50;
+float angle = 0;  // ángulo inicial de la perilla
+boolean dragging = false;
+
+float cubeX = 300;  // Posición inicial del cubo
+float cubeY = 200;
+
+void setup() {
+  size(600, 400, P3D);
+}
+
+void draw() {
+  background(255);
+  
+  // Dibujar la perilla (knob)
+  pushMatrix();
+  translate(knobX, knobY);
+  stroke(0);
+  fill(200);
+  ellipse(0, 0, knobRadius * 2, knobRadius * 2);
+  
+  // Dibuja el indicador de la perilla
+  float indicatorX = cos(angle) * knobRadius;
+  float indicatorY = sin(angle) * knobRadius;
+  stroke(0);
+  line(0, 0, indicatorX, indicatorY);
+  popMatrix();
+  
+  // Actualiza la posición del cubo basada en el ángulo de la perilla.
+  cubeX = map(angle, -PI, PI, 50, width - 50);
+  
+  // Dibuja el cubo
+  pushMatrix();
+  translate(cubeX, cubeY);
+  rotateY(angle);
+  fill(150, 100, 250);
+  box(50);
+  popMatrix();
+}
+
+void mousePressed() {
+  // Chequea si el mouse esta presionado en la perilla
+  if (dist(mouseX, mouseY, knobX, knobY) < knobRadius) {
+    dragging = true;
+  }
+}
+
+void mouseDragged() {
+  if (dragging) {
+    // Calcula el angulo basado en la posición del mouse
+    float dx = mouseX - knobX;
+    float dy = mouseY - knobY;
+    angle = atan2(dy, dx);
+  }
+}
+
+void mouseReleased() {
+  dragging = false;
+}
+```
+#### Movimiento cubo X, Y, Z con perillas.
+```js
+int knobX1 = 100, knobY1 = 100;  // Posición del primer knob
+int knobX2 = 100, knobY2 = 200;  // Posición del segundo knob
+int knobX3 = 100, knobY3 = 300;  // Posición del tercer knob
+int knobRadius = 50;  // Radio de los knobs
+
+float angle1 = 0, angle2 = 0, angle3 = 0;  // Ángulos para los knobs
+boolean dragging1 = false, dragging2 = false, dragging3 = false;  // Para detectar si se está arrastrando un knob
+
+float cubeX = 300, cubeY = 200, cubeZ = -200;  // Posición inicial del cubo
+
+void setup() {
+  size(600, 400, P3D);  // Tamaño del lienzo en 3D
+}
+
+void draw() {
+  background(255);  // Fondo blanco
+  
+  // Dibujar el primer knob
+  drawKnob(knobX1, knobY1, angle1);
+  // Dibujar el segundo knob
+  drawKnob(knobX2, knobY2, angle2);
+  // Dibujar el tercer knob
+  drawKnob(knobX3, knobY3, angle3);
+  
+  // Actualizar la posición del cubo según los ángulos de los knobs
+  cubeX = map(angle1, -PI, PI, 50, width - 50);  // Mueve el cubo en el eje X
+  cubeY = map(angle2, -PI, PI, 50, height - 50);  // Mueve el cubo en el eje Y
+  cubeZ = map(angle3, -PI, PI, -300, 300);  // Mueve el cubo en el eje Z
+  
+  // Dibujar el cubo
+  pushMatrix();
+  translate(cubeX, cubeY, cubeZ);
+  rotateY(angle1);  // Rotación del cubo en el eje Y
+  rotateX(angle2);  // Rotación del cubo en el eje X
+  rotateZ(angle3);  // Rotación del cubo en el eje Z
+  fill(150, 100, 250);  // Color del cubo
+  box(50);  // Tamaño del cubo
+  popMatrix();
+}
+
+void drawKnob(int x, int y, float angle) {
+  // Función para dibujar cada knob
+  pushMatrix();
+  translate(x, y);
+  stroke(0);
+  fill(200);
+  ellipse(0, 0, knobRadius * 2, knobRadius * 2);  // Dibuja el círculo del knob
+  
+  // Dibuja el indicador del knob
+  float indicatorX = cos(angle) * knobRadius;
+  float indicatorY = sin(angle) * knobRadius;
+  stroke(0);
+  line(0, 0, indicatorX, indicatorY);  // Línea que muestra el ángulo del knob
+  popMatrix();
+}
+
+void mousePressed() {
+  // Detectar si el mouse presiona el primer knob
+  if (dist(mouseX, mouseY, knobX1, knobY1) < knobRadius) {
+    dragging1 = true;
+  }
+  // Detectar si el mouse presiona el segundo knob
+  if (dist(mouseX, mouseY, knobX2, knobY2) < knobRadius) {
+    dragging2 = true;
+  }
+  // Detectar si el mouse presiona el tercer knob
+  if (dist(mouseX, mouseY, knobX3, knobY3) < knobRadius) {
+    dragging3 = true;
+  }
+}
+
+void mouseDragged() {
+  // Ajustar el ángulo del primer knob mientras se arrastra
+  if (dragging1) {
+    float dx = mouseX - knobX1;
+    float dy = mouseY - knobY1;
+    angle1 = atan2(dy, dx);
+  }
+  // Ajustar el ángulo del segundo knob mientras se arrastra
+  if (dragging2) {
+    float dx = mouseX - knobX2;
+    float dy = mouseY - knobY2;
+    angle2 = atan2(dy, dx);
+  }
+  // Ajustar el ángulo del tercer knob mientras se arrastra
+  if (dragging3) {
+    float dx = mouseX - knobX3;
+    float dy = mouseY - knobY3;
+    angle3 = atan2(dy, dx);
+  }
+}
+
+void mouseReleased() {
+  // Dejar de arrastrar los knobs
+  dragging1 = false;
+  dragging2 = false;
+  dragging3 = false;
+}
+```
+
+
+
+
+
+
+
 
 
 
