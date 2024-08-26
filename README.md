@@ -753,7 +753,7 @@ void mouseReleased() {
   dragging = false;
 }
 ```
-#### Movimiento cubo X, Y, Z con perillas.
+#### Movimiento cubo con perillas.
 ```js
 int knobX1 = 100, knobY1 = 100;  // Posición del primer knob
 int knobX2 = 100, knobY2 = 200;  // Posición del segundo knob
