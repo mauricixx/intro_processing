@@ -1147,7 +1147,7 @@ void draw()
 
 }
 ```
-conectar un sensor de distancia Sharp a Arduino, sigue estos pasos:
+### Conectar un sensor de distancia Sharp a Arduino, sigue estos pasos:
 
 Materiales:
 
