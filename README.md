@@ -1147,6 +1147,86 @@ void draw()
 
 }
 ```
+conectar un sensor de distancia Sharp a Arduino, sigue estos pasos:
+
+Materiales:
+
+•	Arduino (por ejemplo, Arduino Uno)
+•	Sensor de distancia Sharp (GP2Y0A21YK o similar)
+•	Cables de conexión
+•	Fuente de alimentación para Arduino (puede ser un cable USB)
+
+Conexiones del Sensor Sharp:
+
+El sensor Sharp tiene tres pines:
+
+1.	VCC: Alimentación (5V)
+2.		2.	GND: Tierra (GND)
+3.	Vo: Salida de señal analógica (se conecta a un pin analógico de Arduino)
+
+Pasos para conectar el sensor:
+
+1.	Conectar el pin VCC del sensor a 5V de Arduino:
+	•	Usa un cable de conexión para conectar el pin VCC del sensor Sharp al pin de 5V en el Arduino.
+	
+ 2.	Conectar el pin GND del sensor a GND de Arduino:
+	•	Conecta el pin GND del sensor Sharp al pin GND del Arduino.
+3.	Conectar el pin de señal (Vo) a un pin analógico en Arduino:
+	•	Conecta el pin Vo (salida de señal) del sensor al pin analógico A0 en Arduino.
+
+Diagrama de conexiones:
+
+•	Sensor Sharp VCC → Arduino 5V
+
+### Sensor Distancia Visual
+#####código Arduino:
+```js
+// Definir el pin del sensor Sharp
+int sharpPin = A0;
+
+void setup() {
+  Serial.begin(9600); // Iniciar comunicación serial
+}
+
+void loop() {
+  int sensorValue = analogRead(sharpPin); // Leer valor del sensor
+  Serial.println(sensorValue); // Enviar valor a Processing
+  delay(100); // Esperar un momento
+}
+```
+
+#####código Processing:
+```js
+import processing.serial.*; 
+
+Serial myPort; // Objeto para la comunicación serial
+int sensorValue = 0; // Valor del sensor
+
+void setup() {
+  size(600, 600); 
+  String portName = Serial.list()[0]; // Escoger el puerto correcto
+  myPort = new Serial(this, portName, 9600); 
+  myPort.bufferUntil('\n'); // Leer hasta encontrar un salto de línea
+}
+
+void draw() {
+  background(255); 
+  int circleSize = map(sensorValue, 0, 1023, 50, 500); // Mapear el valor del sensor a un rango de tamaños
+  fill(0, 100, 255);
+  ellipse(width/2, height/2, circleSize, circleSize); // Dibujar círculo
+}
+
+void serialEvent(Serial myPort) {
+  String inString = myPort.readStringUntil('\n'); // Leer valor
+  if (inString != null) {
+    inString = trim(inString); // Eliminar espacios
+    sensorValue = int(inString); // Convertir a número
+  }
+}
+```
+
+
+
 
 
 
