@@ -1078,7 +1078,8 @@ function mouseReleased() {
 ###ARDUINO A PROCESSING
 
 ###Hola Mundo
-´´´js
+
+```js
 void setup() {
   Serial.begin(9600); // Inicia la comunicación serie a 9600 bps
   Serial.println("Hola, Mundo!"); // Envía "Hola, Mundo!" al monitor serie
@@ -1087,9 +1088,9 @@ void setup() {
 void loop() {
   // No es necesario poner nada en el loop para este ejemplo
 }
-´´´
+```
 
-´´´js
+```js
 unsigned int ADCValue;
 void setup(){
     Serial.begin(9600);
@@ -1102,12 +1103,12 @@ void loop(){
     Serial.println(val);
 delay(50);
 }
-´´´
+```
 
 #### Interactive ellipse
 Processing Sketch:
 
-´´´js
+```js
 import processing.serial.*;
 
 Serial myPort;  // Create object from Serial class
@@ -1145,7 +1146,7 @@ void draw()
   ellipse(width/2, height/2, d, d);   
 
 }
-´´´
+```
 
 
 
