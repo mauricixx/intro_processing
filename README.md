@@ -1244,10 +1244,10 @@ void draw()
 
 ```js
 /*******************************
-           Connection:
+           Conexión:
              VCC-5V
              GND-GND
-             S-Analog pin 0
+             S-Analog pin A0
 
 Puedes ponder el sensor en la palma de tu mano
 para sensar la humedad de  tu palma.
@@ -1255,13 +1255,13 @@ para sensar la humedad de  tu palma.
 
 void setup()
 {
-  Serial.begin(9600);// open serial port, set the baud rate to 9600 bps
+  Serial.begin(9600);// abre el puerto serial y Establece la velocidad en baudios a 9600 bps
 }
 void loop()
 {
   int sensorValue;
-  sensorValue = analogRead(0);   //connect Steam sensors to Analog 0
-  Serial.println(sensorValue); //print the value to serial
+  sensorValue = analogRead(0);   //conectar el sensor de humedad al pin analogo 0
+  Serial.println(sensorValue); //imprime el valor a serial.
   delay(200);
 }
 ```
