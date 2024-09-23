@@ -1240,7 +1240,7 @@ void draw()
 ### Sensor de humedad (DFRobot).
 <img src="https://raw.githubusercontent.com/DFRobot/DFRobotMediaWikiImage/master/Image/Stream_Sensor_CD_UNO.png"/>
 
-##### fuente: https://wiki.dfrobot.com/Steam_Sensor__SKU_SEN0121_
+##### fuente: "https://wiki.dfrobot.com/Steam_Sensor__SKU_SEN0121_"
 
 ```js
 /*******************************
