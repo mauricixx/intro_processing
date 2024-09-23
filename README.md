@@ -1236,9 +1236,39 @@ void draw()
   ellipse(width/2, height/2, d, d);   
 
 }
-
-
 ```
+### Sensor de humedad (DFRobot).
+<img src="https://raw.githubusercontent.com/DFRobot/DFRobotMediaWikiImage/master/Image/Stream_Sensor_CD_UNO.png"/>
+
+##### fuente: https://wiki.dfrobot.com/Steam_Sensor__SKU_SEN0121_
+
+```js
+/*******************************
+           Connection:
+             VCC-5V
+             GND-GND
+             S-Analog pin 0
+
+Puedes ponder el sensor en la palma de tu mano
+para sensar la humedad de  tu palma.
+ ********************************/
+
+void setup()
+{
+  Serial.begin(9600);// open serial port, set the baud rate to 9600 bps
+}
+void loop()
+{
+  int sensorValue;
+  sensorValue = analogRead(0);   //connect Steam sensors to Analog 0
+  Serial.println(sensorValue); //print the value to serial
+  delay(200);
+}
+```
+
+
+
+
 
 
 
