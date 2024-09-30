@@ -1266,3 +1266,58 @@ void loop()
   delay(200);
 }
 ```
+#### Piezo
+##### código Processing:
+```js
+import processing.serial.*;
+
+Serial myPort;  // Objeto para la comunicación serial
+int sensorValue = 0;
+
+void setup() {
+  size(400, 400);
+  // Cambia el nombre del puerto por el que estés utilizando en tu sistema
+  String portName = Serial.list()[0];  // Obtener el primer puerto disponible
+  myPort = new Serial(this, "/dev/cu.usbmodem1101", 9600);
+  myPort.bufferUntil('\n');  // Esperar a recibir una línea completa
+}
+
+void draw() {
+  background(255);
+  
+  // Mapeamos el valor del sensor al tamaño del círculo
+  float circleSize = map(sensorValue, 0, 1023, 10, width);
+  
+  // Dibujar el círculo en el centro
+  fill(100, 150, 250);
+  ellipse(width/2, height/2, circleSize, circleSize);
+}
+
+// Función para leer los datos seriales
+void serialEvent(Serial myPort) {
+  String inString = myPort.readStringUntil('\n');  // Leer la línea completa
+  if (inString != null) {
+    inString = trim(inString);  // Eliminar cualquier espacio o carácter no deseado
+    sensorValue = int(inString);  // Convertir la cadena en un número entero
+  }
+}
+```
+código Arduino:
+```js
+int sensorPin = A0;  // Conecta el sensor piezo al pin A0
+int sensorValue = 0;
+
+void setup() {
+  Serial.begin(9600);  // Iniciar la comunicación serial a 9600 baudios
+}
+
+void loop() {
+  sensorValue = analogRead(sensorPin);  // Leer el valor del sensor
+  Serial.println(sensorValue);          // Enviar el valor a Processing
+  delay(100);                           // Esperar un poco antes de la siguiente lectura
+}
+```
+
+
+
+
