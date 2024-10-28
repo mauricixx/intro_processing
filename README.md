@@ -1319,7 +1319,7 @@ void loop() {
 ```
 
 #### VIDEO ascii
-´´´js
+```js
 import processing.video.*;
 
 Capture cam;
@@ -1362,7 +1362,8 @@ void draw() {
     }
   }
 }
-'''
+```
+
 ### Ascii Cam.
 ```js
 import processing.video.*;
