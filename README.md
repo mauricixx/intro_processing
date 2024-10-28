@@ -1498,6 +1498,68 @@ void serialEvent(Serial port) {
 }
 ```
 
+#### Glitch
+
+```js
+glitch:
+
+import processing.video.*;
+import processing.serial.*;
+
+Serial myPort; // Serial port for Arduino connection
+Capture cam; // Video capture object
+int glitchIntensity = 0;
+
+void setup() {
+  size(640, 480); // Set canvas size
+  cam = new Capture(this, width, height);
+  cam.start();
+  
+  // Initialize serial communication with Arduino
+  String portName = Serial.list()[0]; // Replace 0 with the index of your port
+  myPort = new Serial(this, portName, 9600);
+  myPort.bufferUntil('\n');
+}
+
+void draw() {
+  if (cam.available() == true) {
+    cam.read();
+  }
+
+  // Display the camera feed with a glitch effect
+  loadPixels();
+  cam.loadPixels();
+  
+  for (int y = 0; y < height; y++) {
+    for (int x = 0; x < width; x++) {
+      int index = x + y * width;
+      
+      // Apply glitch effect based on sensor value
+      if (random(100) < glitchIntensity) {
+        // Pixel shift: Select a random nearby pixel to swap color values
+        int glitchIndex = (int) constrain(index + random(-glitchIntensity, glitchIntensity), 0, pixels.length-1);
+        pixels[index] = cam.pixels[glitchIndex];
+      } else {
+        // No glitch, regular pixel
+        pixels[index] = cam.pixels[index];
+      }
+    }
+  }
+  updatePixels();
+}
+
+// Event for receiving data from Arduino
+void serialEvent(Serial myPort) {
+  String inString = myPort.readStringUntil('\n'); // Read the serial input
+  if (inString != null) {
+    inString = trim(inString);
+    int sensorValue = int(inString);
+    glitchIntensity = (int) map(sensorValue, 0, 1023, 0, 100); // Map sensor value to glitch intensity
+  }
+}
+```
+
+
 
 
 
