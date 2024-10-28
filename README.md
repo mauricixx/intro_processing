@@ -1368,7 +1368,7 @@ void draw() {
 
 #### Arduino:
 
-´´´js
+```js
 void setup() {
   Serial.begin(9600);
 }
@@ -1384,10 +1384,11 @@ void loop() {
   
   delay(50);  // Delay to reduce data rate
 }
-´´´
+```
 
 #### Processing:
-´´´js
+
+```js
 import processing.serial.*;
 import processing.video.*;
 
@@ -1449,7 +1450,7 @@ void serialEvent(Serial port) {
     }
   }
 }
-´´´
+```
 
 
 
