@@ -1500,6 +1500,24 @@ void serialEvent(Serial port) {
 
 #### Glitch
 
+arduino:
+```js
+int sensorPin = A0; // Analog input pin connected to the rotation sensor
+int sensorValue = 0;
+
+void setup() {
+  Serial.begin(9600); // Initialize serial communication
+}
+
+void loop() {
+  sensorValue = analogRead(sensorPin); // Read sensor value
+  Serial.println(sensorValue); // Send the value to Processing
+  delay(10); // Small delay to stabilize readings
+}
+```
+
+Processing:
+
 ```js
 glitch:
 
