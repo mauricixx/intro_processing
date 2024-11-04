@@ -1578,11 +1578,7 @@ void serialEvent(Serial myPort) {
 ```
 
 #### Blink Led y sonido.
-```js/*
-Código repaso Arduino
-basado en el blink
-
-
+```js
 */
 
 // Definiciones y constantes
@@ -1624,6 +1620,8 @@ void loop() {
 ```
 
 
+
+<img src="[https://raw.githubusercontent.com/DFRobot/DFRobotMediaWikiImage/master/Image/Stream_Sensor_CD_UNO.png](https://raw.githubusercontent.com/mauricixx/intro_processing/refs/heads/main/img/circuito.jpg)" width="1024" height="550" />
 
 
 
