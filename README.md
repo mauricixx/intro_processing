@@ -1577,6 +1577,55 @@ void serialEvent(Serial myPort) {
 }
 ```
 
+#### Blink Led y sonido.
+```js/*
+Código repaso Arduino
+basado en el blink
+
+
+*/
+
+// Definiciones y constantes
+#define pinLed 8 //definimos pin donde se conecta el LED
+#define pinTono 9 //pin PWM~ donde conectamos parlante 
+// ver https://docs.arduino.cc/learn/microcontrollers/analog-output/
+
+int intervalo = 400; //variable para el intervalo de parpadeo
+int frecTono = 432;  //variable para frecuencia del tono (Hz)
+
+void setup() {
+  // función de inicio
+
+  pinMode(pinLed, OUTPUT); // configuramos pinLed como de salida
+  pinMode(pinTono, OUTPUT);  // configuramos pinTono como de salida
+
+}
+
+void loop() {
+  // función de código principal que itera
+
+  digitalWrite(pinLed,HIGH); //enciendo LED
+  tone(pinTono,frecTono); //generamos tono
+  delay(intervalo); //espero un tiempo en ms
+  digitalWrite(pinLed,LOW); //apago LED
+  noTone(pinTono);  //apagamos tono
+  delay(intervalo); //espero un tiempo
+
+  intervalo = intervalo - 10;
+
+  if (intervalo<=0){
+    intervalo = 400;
+  }
+
+  // randomizamos la frecuencia en un rango determinado
+  frecTono = random(150,740);
+
+}
+```
+
+
+
+
 
 
 
