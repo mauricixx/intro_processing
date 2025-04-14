@@ -5,6 +5,8 @@
 2. [void-setup](#descripción-más-detallada-de-void-setup)
 3. [Conceptos Básicos](#conceptos-básicos)
    3.1 [ejemplo](#por-ejemplo)
+4. [Sistema de Coordenada en Processing](#sistema-de-coordenadas-en-processing)
+   4.1 [Razones históricas y prácticas](#razones-históricas-y-prácticas)
 
 
 
