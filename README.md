@@ -1,7 +1,8 @@
 # intro_processing
 ## Index.
-[Hola Mundo :)](#hola-mundo)
-[void-setup](#descripción-más-detallada-de-void-setup)
+#[Hola Mundo :)](#hola-mundo)
+#[void-setup](#descripción-más-detallada-de-void-setup)
+#[Conceptos Básicos](#conceptos-básicos)
 
 
 #### HOLA MUNDO:
@@ -27,9 +28,9 @@ void setup() {
 }
 ```
 
-En **Processing**, el método **void setup()** es una función fundamental que se utiliza para inicializar los valores y configuraciones del programa antes de que empiece a ejecutarse el bucle principal de dibujo, que está contenido en la función void draw().
-
 ###### Descripción más detallada de **void setup()**:
+
+En **Processing**, el método **void setup()** es una función fundamental que se utiliza para inicializar los valores y configuraciones del programa antes de que empiece a ejecutarse el bucle principal de dibujo, que está contenido en la función void draw().
 
 1.	Inicialización: void setup() se ejecuta una sola vez al comienzo del programa. Es el lugar ideal para inicializar variables, configurar el tamaño de la ventana, y establecer cualquier configuración inicial necesaria para el programa.
 2.	Configuración de la Ventana: A menudo, se utiliza para definir el tamaño de la ventana de visualización con la función size(ancho, alto).
