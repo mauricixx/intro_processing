@@ -1,8 +1,7 @@
 # intro_processing
-# Index.
 
 1. [Hola Mundo :)](#hola-mundo) <br> 
-2. [void-setup](#descripción-más-detallada-de-void-setup) <br>
+2. [Void-Setup](#descripción-más-detallada-de-void-setup) <br>
 3.  [Conceptos Básicos](#conceptos-básicos) <br>
    3.1 [ejemplo](#por-ejemplo) <br>
 4. [Sistema de Coordenada en Processing](#sistema-de-coordenadas-en-processing) <br>
@@ -35,7 +34,7 @@ void setup() {
 }
 ```
 
-###### Descripción más detallada de **void setup()**:
+###### **Void Setup()**:
 
 En **Processing**, el método **void setup()** es una función fundamental que se utiliza para inicializar los valores y configuraciones del programa antes de que empiece a ejecutarse el bucle principal de dibujo, que está contenido en la función void draw().
 
@@ -81,6 +80,8 @@ void setup() {
 	•	Configura la velocidad de fotogramas a 30 cuadros por segundo. Esto significa que la función draw() se ejecutará 30 veces por segundo.
 10.	}:
 	•	Cierra la función setup().
+
+###### **Void Draw()**:
 
 ```js
 void draw() {
