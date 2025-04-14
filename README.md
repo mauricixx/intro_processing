@@ -6,7 +6,9 @@
 3. [Conceptos Básicos](#conceptos-básicos)
    3.1 [ejemplo](#por-ejemplo)
 4. [Sistema de Coordenada en Processing](#sistema-de-coordenadas-en-processing)
-   4.1 [Razones históricas y prácticas](#razones-históricas-y-prácticas)
+   4.1. [Razones históricas y prácticas](#razones-históricas-y-prácticas)
+   4.2. [Ejemplo visual](#ejemplo-visual)
+   4.3. [Localizador de puntos en el plano Cartesiano (p5js)](https://mauricixx.github.io/intro_processing/cartesiano/index.html)
 
 
 
