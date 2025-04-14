@@ -1,7 +1,7 @@
 # intro_processing
 ## Index.
-### [Hola Mundo :)](https://mauricixx.github.io/intro_processing/#hola-mundo)
 [Hola Mundo :)](#hola-mundo)
+[void-setup](#descripción-más-detallada-de-void-setup)
 
 
 #### HOLA MUNDO:
