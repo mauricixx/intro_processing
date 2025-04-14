@@ -9,6 +9,8 @@
    5.1 [Razones históricas y prácticas](#razones-históricas-y-prácticas) <br>
    5.2 [Ejemplo visual](#ejemplo-visual) <br>
    5.3 [Localizador de puntos en el plano Cartesiano (p5js)](https://mauricixx.github.io/intro_processing/cartesiano/index.html) <br>
+6. [Colores](#ii-colores)
+7. [Interactividad](#interactividad)
 
 
 
