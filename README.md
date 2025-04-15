@@ -13,9 +13,15 @@
 7. [Interactividad](#interactividad) <br>
    7.1 [I. Uso del Mouse](#i-uso-del-ratón) <br>
    7.2 [II. Eventos del Mouse](#ii--eventos-del-ratón) <br>
-   7.2.1 [mousePressed()](#mousepressed)
-   7.2.2 [mouseReleased()](#mousereleased)
-   7.2.3 [mouseDragged()](#mousedragged)
+   7.2.1 [mousePressed()](#mousepressed) <br>
+   7.2.2 [mouseReleased()](#mousereleased) <br>
+   7.2.3 [mouseDragged()](#mousedragged) <br>
+   7.2.4 [mouseMoved](#mousemoved) <br>
+   7.2.5 [Ejemplo 1](#ejemplo-de-uso-de-estas-funciones)
+   7.2.6 [Ejemplo 2](#en-este-ejemplo)
+8. [Animación](#animación)
+   8.1 [Concepto de Draw](#i-concepto-de-draw)
+   8.2 [Variables y Control](#ii-variables-y-control)
 
 
 
