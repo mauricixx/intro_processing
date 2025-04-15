@@ -10,7 +10,12 @@
    5.2 [Ejemplo visual](#ejemplo-visual) <br>
    5.3 [Localizador de puntos en el plano Cartesiano (p5js)](https://mauricixx.github.io/intro_processing/cartesiano/index.html) <br>
 6. [Colores](#ii-colores)
-7. [Interactividad](#interactividad)
+7. [Interactividad](#interactividad) <br>
+   7.1 [I. Uso del Mouse](#i-uso-del-ratón) <br>
+   7.2 [II. Eventos del Mouse](#ii--eventos-del-ratón) <br>
+   7.2.1 [mousePressed()](#mousepressed)
+   7.2.2 [mouseReleased()](#mousereleased)
+   7.2.3 [mouseDragged()](#mousedragged)
 
 
 
@@ -313,7 +318,7 @@ void mouseDragged() {
 3.	}:
 	•	Cierra la función mouseDragged().
 
-mouseMoved()
+
 ```js
 void mouseDragged() {
   // Código que se ejecuta cuando el ratón se mueve mientras se presiona un botón
@@ -326,7 +331,7 @@ void mouseDragged() {
 3.	}:
 	•	Cierra la función mouseDragged().
 
-mouseMoved()
+###### mouseMoved()
 ```js
 void mouseMoved() {
   // Código que se ejecuta cuando el ratón se mueve sin presionar ningún botón
