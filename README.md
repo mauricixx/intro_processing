@@ -17,11 +17,11 @@
    7.2.2 [mouseReleased()](#mousereleased) <br>
    7.2.3 [mouseDragged()](#mousedragged) <br>
    7.2.4 [mouseMoved](#mousemoved) <br>
-   7.2.5 [Ejemplo 1](#ejemplo-de-uso-de-estas-funciones)
-   7.2.6 [Ejemplo 2](#en-este-ejemplo)
-8. [Animación](#animación)
-   8.1 [Concepto de Draw](#i-concepto-de-draw)
-   8.2 [Variables y Control](#ii-variables-y-control)
+   7.2.5 [Ejemplo 1](#ejemplo-de-uso-de-estas-funciones) <br>
+   7.2.6 [Ejemplo 2](#en-este-ejemplo) <br>
+8. [Animación](#animación) <br>
+   8.1 [Concepto de Draw](#i-concepto-de-draw) <br>
+   8.2 [Variables y Control](#ii-variables-y-control) <br>
 
 
 
