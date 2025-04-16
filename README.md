@@ -1,4 +1,6 @@
-# intro_processing
+# Interfaces
+### El siguiente documento esta enmarcado en la introduccion a Processing y Arduino para realizar la construccion de una interfaz que interactúe entre ellos y el usuario como ejercicios artísticos.
+
 
 1. [Hola Mundo :)](#hola-mundo) <br> 
 2. [Void-Setup](#void-setup) <br>
