@@ -22,6 +22,11 @@
 8. [Animación](#animación) <br>
    8.1 [Concepto de Draw](#i-concepto-de-draw) <br>
    8.2 [Variables y Control](#ii-variables-y-control) <br>
+9. [Guardar una imagen en Processing](#guardar-una-imagen-en-processing) <br>
+   9.1 [I. Guardar una imagen en un momento especifico](#1-guardar-una-imagen-en-un-momento-específico) <br>
+   9.2 [II. Guardar una secuencia de imágenes](#2-guardar-una-secuencia-de-imágenes)
+10. [Cambiar color de fondo](#2-cambiar-color-de-fondo)
+13. 
 
 
 
@@ -494,6 +499,50 @@ void draw() {
 }
 ```
 
+##### Cambiar Color del fondo en tiempo real.
+
+```js
+int sliderX;  // Posición x del slider
+int sliderY;  // Posición y del slider
+int sliderWidth;  // Ancho del slider
+int sliderHeight;  // Altura del slider
+int sliderValue;  // Valor del slider (posición de la perilla)
+
+void setup() {
+  size(400, 400);
+  colorMode(HSB, 360, 100, 100);  // Configura el modo de color a HSB (Hue, Saturation, Brightness)
+  
+  // Inicializa las dimensiones del slider
+  sliderX = 50;
+  sliderY = height - 50;
+  sliderWidth = 300;
+  sliderHeight = 20;
+  sliderValue = sliderX;  // El valor inicial del slider coincide con la posición x inicial
+}
+
+void draw() {
+  // Calcula el color de fondo basado en la posición del slider
+  float hue = map(sliderValue, sliderX, sliderX + sliderWidth, 0, 360);
+  background(hue, 100, 100);
+  
+  // Dibuja el slider
+  fill(255);
+  rect(sliderX, sliderY, sliderWidth, sliderHeight);
+  
+  // Dibuja la perilla del slider
+  fill(0);
+  rect(sliderValue, sliderY, 10, sliderHeight);
+}
+
+void mouseDragged() {
+  // Si el ratón está sobre el slider, actualiza la posición del valor del slider
+  if (mouseX >= sliderX && mouseX <= sliderX + sliderWidth && mouseY >= sliderY && mouseY <= sliderY + sliderHeight) {
+    sliderValue = mouseX;
+  }
+}
+```
+
+
 #### Guardar una imagen en Processing.
 
 Para capturar y guardar una imagen en Processing, puedes usar la función save() o saveFrame() dependiendo de tus necesidades. Aquí te explico cómo utilizarlas:
@@ -539,51 +588,8 @@ void keyPressed() {
 }
 ```
 
-##### 2. Cambiar Color de Fondo.
 
-```js
-int sliderX;  // Posición x del slider
-int sliderY;  // Posición y del slider
-int sliderWidth;  // Ancho del slider
-int sliderHeight;  // Altura del slider
-int sliderValue;  // Valor del slider (posición de la perilla)
-
-void setup() {
-  size(400, 400);
-  colorMode(HSB, 360, 100, 100);  // Configura el modo de color a HSB (Hue, Saturation, Brightness)
-  
-  // Inicializa las dimensiones del slider
-  sliderX = 50;
-  sliderY = height - 50;
-  sliderWidth = 300;
-  sliderHeight = 20;
-  sliderValue = sliderX;  // El valor inicial del slider coincide con la posición x inicial
-}
-
-void draw() {
-  // Calcula el color de fondo basado en la posición del slider
-  float hue = map(sliderValue, sliderX, sliderX + sliderWidth, 0, 360);
-  background(hue, 100, 100);
-  
-  // Dibuja el slider
-  fill(255);
-  rect(sliderX, sliderY, sliderWidth, sliderHeight);
-  
-  // Dibuja la perilla del slider
-  fill(0);
-  rect(sliderValue, sliderY, 10, sliderHeight);
-}
-
-void mouseDragged() {
-  // Si el ratón está sobre el slider, actualiza la posición del valor del slider
-  if (mouseX >= sliderX && mouseX <= sliderX + sliderWidth && mouseY >= sliderY && mouseY <= sliderY + sliderHeight) {
-    sliderValue = mouseX;
-  }
-}
-```
-
-
-##### 3. Guardar una Secuencia de Imágenes
+##### 2. Guardar una Secuencia de Imágenes
 
 Si deseas capturar y guardar una secuencia de imágenes (por ejemplo, para crear una animación), puedes usar saveFrame(). Esta función guarda automáticamente una secuencia de imágenes numeradas.
 
@@ -608,11 +614,13 @@ Notas:
 •	Asegúrate de que la carpeta donde se guardarán las imágenes (output/ en el ejemplo) exista. De lo contrario, Processing la creará automáticamente.
 •	Los archivos de imagen se guardan en el mismo directorio donde se encuentra el sketch de Processing.
 
+
+
 ##### Capturar un video en Processing.
 
 Guardar un video directamente desde Processing no es tan directo como guardar imágenes. Processing no tiene una función incorporada para exportar video, pero puedes usar la biblioteca Video Export para lograrlo. Aquí te muestro cómo hacerlo:
 
-I. Instalación de la Biblioteca Video Export
+##### I. Instalación de la Biblioteca Video Export en Processing 3
 
 1.	Abre Processing.
 2.	Ve a Sketch > Import Library > Add Library….
