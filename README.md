@@ -1,4 +1,4 @@
-##### Introducción a Processing y Arduino para realizar la construccion de una interfaz como pieza artística, que permita la iteracción entre usuario-máquina.
+##### Introducción a Processing y Arduino para realizar la construcción de una interfaz como pieza artística que permita la iteracción entre usuario-máquina.
 
 
 1. [Hola Mundo :)](#hola-mundo) <br> 
