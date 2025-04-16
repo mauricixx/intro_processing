@@ -1,4 +1,3 @@
-# Interfaces
 ##### Introducción a Processing y Arduino para realizar la construccion de una interfaz como pieza artística, que permita la iteracción entre usuario-máquina.
 
 
