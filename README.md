@@ -2,8 +2,8 @@
 
 
 1. [Hola Mundo :)](#hola-mundo) <br> 
-2. [Void-Setup](#void-setup) <br>
-3. [Void Draw](#void-draw)  <br>
+2. [Void Setup()](#void-setup) <br>
+3. [Void Draw()](#void-draw)  <br>
 4.  [Conceptos Básicos](#conceptos-básicos) <br>
    4.1 [ejemplo](#por-ejemplo) <br>
 5. [Sistema de Coordenada en Processing](#sistema-de-coordenadas-en-processing) <br>
