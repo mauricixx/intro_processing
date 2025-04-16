@@ -1,5 +1,5 @@
 # Interfaces
-### El siguiente documento esta enmarcado en la introduccion a Processing y Arduino para realizar la construccion de una interfaz que interactúe entre ellos y el usuario como ejercicios artísticos.
+##### Introducción a Processing y Arduino para realizar la construccion de una interfaz como pieza artística, que permita la iteracción entre usuario-máquina.
 
 
 1. [Hola Mundo :)](#hola-mundo) <br> 
