@@ -31,7 +31,7 @@
     11.1. [I. Instalación de la biblioteca video export en Processing 3](#i-instalación-de-la-biblioteca-video-export-en-processing-3) <br>
     11.2. [II Guardar video en Processing 4](#guardar-un-video-en-processing-4) <br>
     11.3. [Convertir imágenes en video usandosela Ffmpeg](#ii-convertir-imágenes-en-video-usando-ffmpeg) <br>
-12. [Creaciónistas de perilla en Processing](#creación-de-perilla-processing) <br>
+12. [Creación de perilla en Processing](#creación-de-perilla-processing) <br>
 
 
 
