@@ -26,9 +26,11 @@
 9. [Cambiar Color del fondo en tiempo real](#2-cambiar-color-de-fondo) <br>
 10. [Guardar una imagen en Processing](#guardar-una-imagen-en-processing) <br>
     10.1 [I. Guardar una imagen en un momento especifico](#1-guardar-una-imagen-en-un-momento-específico) <br>
-    10.2 [II. Guardar una secuencia de imágenes](#2-guardar-una-secuencia-de-imágenes)
-11. 
-12. 
+    10.2 [II. Guardar una secuencia de imágenes](#2-guardar-una-secuencia-de-imágenes) <br>
+11. [Capturar un video en Processing](#capturar-un-video-en-processing) <br>
+    11.1. [I. Instalación de la biblioteca video export en Processing 3](#i-instalación-de-la-biblioteca-video-export-en-processing-3) <br>
+    11.2. 
+13. 
 
 
 
@@ -672,6 +674,54 @@ IV. Notas Importantes
 •	Si tu sketch es largo o tiene un alto número de cuadros por segundo (fps), el archivo de video podría ser grande. Ajusta la calidad y duración según tus necesidades.
 
 ****
+
+##### Guardar un video en Processing 4.	
+Si estás usando Processing 4, la forma más confiable de guardar un video es exportando los cuadros como imágenes (saveFrame()) y luego unirlos en un video con una herramienta externa como FFmpeg.
+
+##### V. Código en Processing 4 para guardar cuadros por segundos.	
+```js
+void setup() {
+  size(640, 480);
+  frameRate(30);  // 30 fps
+}
+
+void draw() {
+  background(0);
+  fill(255);
+  ellipse(frameCount % width, height/2, 50, 50);
+
+  // Guardar hasta 300 cuadros (10 segundos a 30fps)
+  if (frameCount <= 300) {
+    saveFrame("output/frame-####.png");
+  }
+}
+```
+Esto creará una carpeta output con 300 imágenes nombradas como frame-0001.png, frame-0002.png, etc.
+
+##### II. Convertir imágenes en video usando FFmpeg.
+```bash
+ffmpeg -framerate 30 -i output/frame-%04d.png -c:v libx264 -pix_fmt yuv420p mi_video.mp4
+```
+	•	-framerate 30: tasa de cuadros (igual que frameRate() en tu sketch)
+	•	-i output/frame-%04d.png: indica el patrón de nombres
+	•	mi_video.mp4: nombre del archivo final
+
+💡 Puedes cambiar mi_video.mp4 por video.mov si prefieres formato para Mac.
+
+##### ¿No tienes FFmpeg?
+Descarga [aquí](#https://ffmpeg.org/download.html)
+O en Mac puedes usar Homebrew:
+ 
+ ```bash
+ brew install ffmpeg
+```
+
+🎁 ##### BONUS: Eliminar imágenes después de crear el video.
+Si quieres borrar las imágenes automáticamente después de crear el video:
+ ```bash
+rm output/*.png
+```
+(En Windows: del output\*.png)
 
 ##### creación de perilla (PROCESSING)
 ```js
