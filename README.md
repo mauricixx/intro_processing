@@ -701,7 +701,8 @@ Esto creará una carpeta output con 300 imágenes nombradas como frame-0001.png,
 
 ##### II. Convertir imágenes en video usando FFmpeg.
 ```bash
-ffmpeg -framerate 30 -i output/frame-%04d.png -c:v libx264 -pix_fmt yuv420p mi_video.mp4
+ffmpeg -framerate 30 -i frame-%04d.png -c:v libx264 -pix_fmt yuv420p mi_video.mp4
+
 ```
 	•	-framerate 30: tasa de cuadros (igual que frameRate() en tu sketch)
 	•	-i output/frame-%04d.png: indica el patrón de nombres
