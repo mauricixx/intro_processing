@@ -23,7 +23,7 @@
 8. [Animación](#animación) <br>
    8.1 [Concepto de Draw](#i-concepto-de-draw) <br>
    8.2 [Variables y Control](#ii-variables-y-control) <br>
-9. [Cambiar Color del fondo en tiempo real]([#cambiar-color-del-fondo-en-tiempo-real) <br>
+9. [Cambiar Color del fondo en tiempo real](#cambiar-color-del-fondo-en-tiempo-real) <br>
 10. [Guardar una imagen en Processing](#guardar-una-imagen-en-processing) <br>
     10.1 [I. Guardar una imagen en un momento especifico](#1-guardar-una-imagen-en-un-momento-específico) <br>
     10.2 [II. Guardar una secuencia de imágenes](#2-guardar-una-secuencia-de-imágenes) <br>
