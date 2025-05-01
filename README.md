@@ -785,9 +785,9 @@ void mouseReleased() {
 ```
 #### creación de perilla (P5js):
 ##### Para realizar tu primer ejercicio en p5.js, sigue estos pasos básicos:
-- Ve al editor web de [p5.js:](#https://editor.p5js.org)
+- Ve al editor web de [p5.js:](https://editor.p5js.org)
 - Crea una cuenta o inicia sesión (opcional, pero útil para guardar proyectos).
-- Verás un código base con setup() y draw(). (puedes borrarlo o comenzar a editar sobre el mismo)
+- Verás un código base con setup() y draw(). (Puedes borrarlo o comenzar a editar sobre el mismo)
 - Copia y pega el siguiente ejercicio en la consla de P5js.
 
   
