@@ -32,6 +32,12 @@
     11.2. [II Guardar video en Processing 4](#guardar-un-video-en-processing-4) <br>
     11.3. [Convertir imágenes en video usandosela ffmpeg](#ii-convertir-imágenes-en-video-usando-ffmpeg) <br>
 12. [Creación de perilla en Processing](#creación-de-perilla-processing) <br>
+13. [Creación de perilla en P5JS](#creación-de-perilla-p5js) <br>
+14. [Movimiento cubo con perilla con Processing](#movimiento-cubo--perilla-processing) <br>
+15. [Movimiento cubo con perilla con P5js](#movimiento-cubo--perilla-p5js) <br>
+16. [Movimiento 1 cubo con 3 perillas. (PROCESSING)](#movimiento-1-cubo-con--3-perillas-processing) <br>
+17. [Movimiento 1 cubo con 3 perillas. (P5JS)](#movimiento-1-cubo-con--3-perillas-p5js) <br>
+
 
 
 
